@@ -1,12 +1,12 @@
 package com.sergio.restaurante.DTO;
 
-public class EntrateDTO {
+public class EntranteDTO {
 	private int id;
 	private String nombre;
 	private Integer precio;
 	
 	
-	public EntrateDTO(int id, String nombre, Integer precio) {
+	public EntranteDTO(int id, String nombre, Integer precio) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -14,7 +14,7 @@ public class EntrateDTO {
 	}
 
 
-	public EntrateDTO(String nombre, Integer precio) {
+	public EntranteDTO(String nombre, Integer precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;

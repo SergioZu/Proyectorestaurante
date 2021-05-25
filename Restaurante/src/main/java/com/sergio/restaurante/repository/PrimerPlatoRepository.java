@@ -7,7 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.sergio.restaurante.DTO.BebidasDTO;
+
+import com.sergio.restaurante.DTO.PrimerPlatoDTO;
 import com.sergio.restaurante.entities.PrimerPlatoEntity;
 
 
@@ -19,7 +20,7 @@ public interface PrimerPlatoRepository extends CrudRepository<PrimerPlatoEntity,
 			+ "WHERE (pp.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND pp.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND pp.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
-	 		List<BebidasDTO> obtenerRolPorUsernamePassword(
+	 		List<PrimerPlatoDTO> obtenerRolPorUsernamePassword(
 					  @Param("id") String id,
 					  @Param("nombre") String nombre,
 					  @Param("precio") String precio);

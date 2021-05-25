@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sergio.restaurante.DTO.BebidasDTO;
+import com.sergio.restaurante.DTO.EntranteDTO;
 import com.sergio.restaurante.entities.EntranteEntity;
 
 
@@ -20,7 +21,7 @@ public interface EntrateRepository extends CrudRepository<EntranteEntity, Intege
 			+ "WHERE (e.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND e.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND e.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
-	 		List<BebidasDTO> obtenerRolPorUsernamePassword(
+	 		List<EntranteDTO> obtenerRolPorUsernamePassword(
 					  @Param("id") String id,
 					  @Param("nombre") String nombre,
 					  @Param("precio") String precio);
