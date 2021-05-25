@@ -2,9 +2,8 @@ create database Restaurante;
 
 use  Restaurante;
 
-drop table `SalasOcupadas`;
 
-select * from `Entrantes`;
+select * from `PlatoSecundario`;
 
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
