@@ -1,12 +1,12 @@
-package com.sergio.DTO;
+package com.sergio.restaurante.DTO;
 
-public class SegundoPlatoDTO {
-	
+public class PrimerPlatoDTO {
+
 	private int id;
 	private String nombre;
 	private Integer precio;
 	
-	public SegundoPlatoDTO(int id, String nombre, Integer precio) {
+	public PrimerPlatoDTO(int id, String nombre, Integer precio) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -38,5 +38,4 @@ public class SegundoPlatoDTO {
 	}
 	
 	
-
 }

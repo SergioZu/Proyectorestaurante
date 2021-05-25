@@ -1,4 +1,4 @@
-package com.sergio.entities;
+package com.sergio.restaurante.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "postre")
-public class PostreEntity {
+@Table(name = "entrantes")
+public class EntranteEntity {
+	
 
 	@Id
 	@Column(name = "id")
@@ -19,22 +20,29 @@ public class PostreEntity {
 	@Column(name = "precio")
 	private int precio;
 
-	public PostreEntity() {
+	
+	public EntranteEntity() {
 		super();
 	}
+	
+	
 
-	public PostreEntity(int id, String nombre, int precio) {
+	public EntranteEntity(int id, String nombre, int precio) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 
-	public PostreEntity(String nombre, int precio) {
+
+
+	public EntranteEntity(String nombre, int precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -60,5 +68,4 @@ public class PostreEntity {
 		this.precio = precio;
 	}
 
-	
 }

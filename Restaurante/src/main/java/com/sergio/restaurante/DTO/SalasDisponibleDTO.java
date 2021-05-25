@@ -1,16 +1,14 @@
-package com.sergio.DTO;
+package com.sergio.restaurante.DTO;
 
-public class PostreDTO {
-
+public class SalasDisponibleDTO {
+	
 	private int id;
 	private String nombre;
-	private Integer precio;
 	
-	public PostreDTO(int id, String nombre, Integer precio) {
+	public SalasDisponibleDTO(int id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.precio = precio;
 	}
 
 	public int getId() {
@@ -28,14 +26,7 @@ public class PostreDTO {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public Integer getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(Integer precio) {
-		this.precio = precio;
-	}
 	
 	
+
 }

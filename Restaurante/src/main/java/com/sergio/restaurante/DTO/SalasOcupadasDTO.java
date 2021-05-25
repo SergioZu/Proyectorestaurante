@@ -1,4 +1,4 @@
-package com.sergio.DTO;
+package com.sergio.restaurante.DTO;
 
 public class SalasOcupadasDTO {
 

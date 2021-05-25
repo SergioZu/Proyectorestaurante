@@ -1,4 +1,4 @@
-package com.sergio.entities;
+package com.sergio.restaurante.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

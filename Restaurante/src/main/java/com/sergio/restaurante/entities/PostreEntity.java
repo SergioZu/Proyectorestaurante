@@ -1,4 +1,4 @@
-package com.sergio.entities;
+package com.sergio.restaurante.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "platosecundario")
-public class SegundoPlatoEntity {
-	
+@Table(name = "postre")
+public class PostreEntity {
+
 	@Id
 	@Column(name = "id")
 	private int id;
@@ -19,18 +19,18 @@ public class SegundoPlatoEntity {
 	@Column(name = "precio")
 	private int precio;
 
-	public SegundoPlatoEntity() {
+	public PostreEntity() {
 		super();
 	}
-	
-	public SegundoPlatoEntity(int id, String nombre, int precio) {
+
+	public PostreEntity(int id, String nombre, int precio) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 
-	public SegundoPlatoEntity(String nombre, int precio) {
+	public PostreEntity(String nombre, int precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -61,8 +61,4 @@ public class SegundoPlatoEntity {
 	}
 
 	
-	
-	
-	
-
 }
