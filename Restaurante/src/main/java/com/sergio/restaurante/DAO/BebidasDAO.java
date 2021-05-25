@@ -10,5 +10,4 @@ public interface BebidasDAO {
 	Integer modificarBebida(int id,String nombre,int precio);
 	Integer eliminarBebida(int id);
 
-
 }
