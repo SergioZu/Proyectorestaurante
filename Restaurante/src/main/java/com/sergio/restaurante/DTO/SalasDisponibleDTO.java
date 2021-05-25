@@ -5,6 +5,12 @@ public class SalasDisponibleDTO {
 	private int id;
 	private String nombre;
 	
+	
+	
+	public SalasDisponibleDTO() {
+		super();
+	}
+
 	public SalasDisponibleDTO(int id, String nombre) {
 		super();
 		this.id = id;
