@@ -3,12 +3,12 @@ create database Restaurante;
 use  Restaurante;
 
 
-select * from `PlatoSecundario`;
+select * from `Bebidas`;
 
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) ,
-  `precio` int (45) ,
+  `nombre` varchar(100) NOT NULL,
+  `precio` int (45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
