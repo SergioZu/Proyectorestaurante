@@ -2,7 +2,7 @@ create database Restaurante;
 
 use  Restaurante;
 
-
+drop table `Entrantes`;
 select * from `Bebidas`;
 
 CREATE TABLE `Entrantes` (
