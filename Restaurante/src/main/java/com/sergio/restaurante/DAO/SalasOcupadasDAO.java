@@ -2,11 +2,13 @@ package com.sergio.restaurante.DAO;
 
 import java.util.List;
 
-public interface SalasOcupadas {
+import com.sergio.restaurante.DTO.SalasOcupadasDTO;
+
+public interface SalasOcupadasDAO {
 	
-	List<SalasOcupadas> visualizarBebidas(int id, String nombre, int precio);
-	Integer insertarNuevaBebida(int id,String nombre,int precio);
-	Integer modificarBebida(int id,String nombre,int precio);
+	List<SalasOcupadasDTO> visualizarBebidas(int id, String nombre, String nombreOcupante);
+	Integer insertarNuevaBebida(int id,String nombre,String nombreOcupante);
+	Integer modificarBebida(int id,String nombre,String nombreOcupante);
 	Integer eliminarBebida(int id);
 
 }
