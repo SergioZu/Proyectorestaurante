@@ -1,7 +1,10 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <ul>
+      <li><router-link to="/">Inicio</router-link></li>
+      <li><router-link to="/bebida">Bebida</router-link></li>
+    </ul>
+
   </div>
   <router-view/>
 </template>
@@ -17,6 +20,7 @@
 
 #nav {
   padding: 30px;
+  position: absolute;
 }
 
 #nav a {
@@ -25,6 +29,27 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #c9200a;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
 }
 </style>
