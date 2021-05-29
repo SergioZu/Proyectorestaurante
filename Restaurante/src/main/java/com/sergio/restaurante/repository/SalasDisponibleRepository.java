@@ -20,7 +20,7 @@ public interface SalasDisponibleRepository extends CrudRepository<SalasDisponibl
 	@Query(value = "select new com.sergio.restaurante.dtos.SalasDisponibleDTO (sa.id,sa.nombre) "
 			+ "FROM com.sergio.colegio.entities.SalasDisponibleEntity sa "
 			+ "WHERE (sa.id LIKE CONCAT('%',:id,'%') or :id is null)"
-			+ "AND sa.nombre LIKE CONCAT ('%',:nombre,'%')")
+			+ "AND (sa.nombre LIKE CONCAT ('%',:nombre,'%')")
 	 		List<SalasDisponibleDTO> obtenerSalasDisponiblePorIDNombre(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre);

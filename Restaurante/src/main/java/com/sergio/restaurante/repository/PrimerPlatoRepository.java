@@ -19,7 +19,7 @@ public interface PrimerPlatoRepository extends CrudRepository<PrimerPlatoEntity,
 			+ "FROM com.sergio.colegio.entities.PrimerPlatoEntity pp "
 			+ "WHERE (pp.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND pp.nombre LIKE CONCAT ('%',:nombre,'%') "
-			+ "AND pp.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
+			+ "AND (pp.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<PrimerPlatoDTO> obtenerPrimerPlatoPorIDNombrePrecio(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,

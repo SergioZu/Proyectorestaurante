@@ -19,7 +19,7 @@ public interface SalasOcupadas extends CrudRepository<SalasOcupadasEntity, Integ
 			+ "FROM com.sergio.colegio.entities.SalasOcupadasEntity so "
 			+ "WHERE (so.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND so.nombre LIKE CONCAT ('%',:nombre,'%')"
-			+ "AND so.nombre LIKE CONCAT ('%',:nombreOcupante,'%')")
+			+ "AND (so.nombre LIKE CONCAT ('%',:nombreOcupante,'%')")
 	 		List<SalasOcupadasDTO>  obtenerSalasOcupadasPorIDNombreNombreOucpante(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,

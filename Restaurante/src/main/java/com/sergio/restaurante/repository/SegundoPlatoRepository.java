@@ -18,7 +18,7 @@ public interface SegundoPlatoRepository extends CrudRepository<SegundoPlatoEntit
 			+ "FROM com.sergio.colegio.entities.SegundoPlatoEntity s "
 			+ "WHERE (s.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND s.nombre LIKE CONCAT ('%',:nombre,'%') "
-			+ "AND s.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
+			+ "AND (s.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<SegundoPlatoEntity>obtenerSegundoPlatoPorIDNombreNombrePrecio(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,

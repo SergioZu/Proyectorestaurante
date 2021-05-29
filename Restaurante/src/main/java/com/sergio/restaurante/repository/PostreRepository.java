@@ -20,7 +20,7 @@ public interface PostreRepository extends CrudRepository<PostreEntity, Integer>{
 			+ "FROM com.sergio.colegio.entities.PostreEntity p "
 			+ "WHERE (p.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND p.nombre LIKE CONCAT ('%',:nombre,'%') "
-			+ "AND p.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
+			+ "AND (p.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<PostreDTO> obtenerPostrePorIDNombrePrecio(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,
