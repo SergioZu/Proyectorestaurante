@@ -16,11 +16,11 @@ import com.sergio.restaurante.entities.EntranteEntity;
 @Repository
 public interface EntrateRepository extends CrudRepository<EntranteEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.dtos.EntranteDTO (e.id,e.nombre,e.precio) "
-			+ "FROM com.sergio.colegio.entities.EntranteEntity e "
-			+ "WHERE (e.id LIKE CONCAT('%',:id,'%') or :id is null)"
+	@Query(value = "select new com.sergio.restaurante.DTO.EntranteDTO (e.id,e.nombre,e.precio) "
+			+ "FROM com.sergio.restaurante.entities.EntranteEntity e "
+			+ "WHERE (e.id LIKE CONCAT('%',:id,'%') or :id is null) "
 			+ "AND e.nombre LIKE CONCAT ('%',:nombre,'%') "
-			+ "AND e.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
+			+ "AND (e.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<EntranteDTO> obtenerEntratePorIDNombrePrecio(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,

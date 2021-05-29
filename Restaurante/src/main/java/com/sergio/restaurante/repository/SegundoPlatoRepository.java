@@ -14,9 +14,9 @@ import com.sergio.restaurante.entities.SegundoPlatoEntity;
 @Repository
 public interface SegundoPlatoRepository extends CrudRepository<SegundoPlatoEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.dtos.SegundoPlatoDTO (s.id,s.nombre,s.precio) "
-			+ "FROM com.sergio.colegio.entities.SegundoPlatoEntity s "
-			+ "WHERE (s.id LIKE CONCAT('%',:id,'%') or :id is null)"
+	@Query(value = "select new com.sergio.restaurante.DTO.SegundoPlatoDTO (s.id,s.nombre,s.precio) "
+			+ "FROM com.sergio.restaurante.entities.SegundoPlatoEntity s "
+			+ "WHERE (s.id LIKE CONCAT('%',:id,'%') or :id is null) "
 			+ "AND s.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND (s.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<SegundoPlatoEntity>obtenerSegundoPlatoPorIDNombreNombrePrecio(

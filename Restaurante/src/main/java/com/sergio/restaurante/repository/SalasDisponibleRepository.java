@@ -17,10 +17,10 @@ import com.sergio.restaurante.entities.SalasDisponiblesEntity;
 public interface SalasDisponibleRepository extends CrudRepository<SalasDisponiblesEntity, Integer>{
 	
 
-	@Query(value = "select new com.sergio.restaurante.dtos.SalasDisponibleDTO (sa.id,sa.nombre) "
-			+ "FROM com.sergio.colegio.entities.SalasDisponibleEntity sa "
-			+ "WHERE (sa.id LIKE CONCAT('%',:id,'%') or :id is null)"
-			+ "AND (sa.nombre LIKE CONCAT ('%',:nombre,'%')")
+	@Query(value = "select new com.sergio.restaurante.DTO.SalasDisponibleDTO (sa.id,sa.nombre) "
+			+ "FROM com.sergio.restaurante.entities.SalasDisponiblesEntity sa "
+			+ "WHERE (sa.id LIKE CONCAT('%',:id,'%') or :id is null) "
+			+ "AND sa.nombre LIKE CONCAT ('%',:nombre,'%') ")
 	 		List<SalasDisponibleDTO> obtenerSalasDisponiblePorIDNombre(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre);

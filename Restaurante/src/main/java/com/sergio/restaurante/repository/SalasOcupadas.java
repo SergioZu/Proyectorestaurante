@@ -15,11 +15,11 @@ import com.sergio.restaurante.entities.SalasOcupadasEntity;
 @Repository
 public interface SalasOcupadas extends CrudRepository<SalasOcupadasEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.dtos.SalasOcupadasDTO (so.id,so.nombre,so.nombreOcupante) "
-			+ "FROM com.sergio.colegio.entities.SalasOcupadasEntity so "
-			+ "WHERE (so.id LIKE CONCAT('%',:id,'%') or :id is null)"
-			+ "AND so.nombre LIKE CONCAT ('%',:nombre,'%')"
-			+ "AND (so.nombre LIKE CONCAT ('%',:nombreOcupante,'%')")
+	@Query(value = "select new com.sergio.restaurante.DTO.SalasOcupadasDTO (so.id,so.nombre,so.nombreOcupante) "
+			+ "FROM com.sergio.restaurante.entities.SalasOcupadasEntity so "
+			+ "WHERE (so.id LIKE CONCAT('%',:id,'%') or :id is null) "
+			+ "AND so.nombre LIKE CONCAT ('%',:nombre,'%') "
+			+ "AND so.nombre LIKE CONCAT ('%',:nombreOcupante,'%') ")
 	 		List<SalasOcupadasDTO>  obtenerSalasOcupadasPorIDNombreNombreOucpante(
 					  @Param("id") int id,
 					  @Param("nombre") String nombre,

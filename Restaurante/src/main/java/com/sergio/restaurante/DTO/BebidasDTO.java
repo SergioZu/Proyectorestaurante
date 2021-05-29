@@ -3,7 +3,7 @@ package com.sergio.restaurante.DTO;
 public class BebidasDTO {
 	private int id;
 	private String nombre;
-	private Integer precio;
+	private int precio;
 	
 	public BebidasDTO(int id, String nombre, Integer precio) {
 		super();

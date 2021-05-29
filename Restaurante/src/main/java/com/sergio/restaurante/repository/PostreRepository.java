@@ -16,9 +16,9 @@ import com.sergio.restaurante.entities.PostreEntity;
 @Repository
 public interface PostreRepository extends CrudRepository<PostreEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.dtos.PostreDTO (p.id,p.nombre,p.precio) "
-			+ "FROM com.sergio.colegio.entities.PostreEntity p "
-			+ "WHERE (p.id LIKE CONCAT('%',:id,'%') or :id is null)"
+	@Query(value = "select new com.sergio.restaurante.DTO.PostreDTO (p.id,p.nombre,p.precio) "
+			+ "FROM com.sergio.restaurante.entities.PostreEntity p "
+			+ "WHERE (p.id LIKE CONCAT('%',:id,'%') or :id is null) "
 			+ "AND p.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND (p.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<PostreDTO> obtenerPostrePorIDNombrePrecio(

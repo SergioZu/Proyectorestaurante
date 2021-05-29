@@ -14,9 +14,9 @@ import com.sergio.restaurante.entities.BebidasEntity;
 @Repository
 public interface BebidasRepository extends CrudRepository<BebidasEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.dtos.BebidasDTO (b.id,b.nombre,b.precio) "
-			+ "FROM com.sergio.colegio.entities.BebidasEntity b "
-			+ "WHERE (b.id LIKE CONCAT('%',:id,'%') or :id is null)"
+	@Query(value = "select new com.sergio.restaurante.DTO.BebidasDTO (b.id,b.nombre,b.precio) "
+			+ "FROM com.sergio.restaurante.entities.BebidasEntity b "
+			+ "WHERE (b.id LIKE CONCAT('%',:id,'%') or :id is null) "
 			+ "AND b.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND (b.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
 	 		List<BebidasDTO> obtenerBebidasPorIDNombrePrecio(
