@@ -19,8 +19,8 @@ public interface BebidasRepository extends CrudRepository<BebidasEntity, Integer
 			+ "WHERE (b.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND b.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND b.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
-	 		List<BebidasDTO> obtenerRolPorUsernamePassword(
-					  @Param("id") String id,
+	 		List<BebidasDTO> obtenerBebidasPorIDNombrePrecio(
+					  @Param("id") int id,
 					  @Param("nombre") String nombre,
-					  @Param("precio") String precio);
+					  @Param("precio") int precio);
 }

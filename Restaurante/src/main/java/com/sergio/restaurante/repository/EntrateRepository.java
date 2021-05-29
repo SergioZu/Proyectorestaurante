@@ -21,8 +21,8 @@ public interface EntrateRepository extends CrudRepository<EntranteEntity, Intege
 			+ "WHERE (e.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND e.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND e.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
-	 		List<EntranteDTO> obtenerRolPorUsernamePassword(
-					  @Param("id") String id,
+	 		List<EntranteDTO> obtenerEntratePorIDNombrePrecio(
+					  @Param("id") int id,
 					  @Param("nombre") String nombre,
-					  @Param("precio") String precio);
+					  @Param("precio") int precio);
 }

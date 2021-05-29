@@ -21,8 +21,8 @@ public interface SalasDisponibleRepository extends CrudRepository<SalasDisponibl
 			+ "FROM com.sergio.colegio.entities.SalasDisponibleEntity sa "
 			+ "WHERE (sa.id LIKE CONCAT('%',:id,'%') or :id is null)"
 			+ "AND sa.nombre LIKE CONCAT ('%',:nombre,'%')")
-	 		List<SalasDisponibleDTO> obtenerRolPorUsernamePassword(
-					  @Param("id") String id,
+	 		List<SalasDisponibleDTO> obtenerSalasDisponiblePorIDNombre(
+					  @Param("id") int id,
 					  @Param("nombre") String nombre);
 
 }
