@@ -1,19 +1,45 @@
 <template>
-  <h2> La Clasificacion de la liga:</h2>
+  <h2> Bebidas:</h2>
   <div class="clasificacion">
     <table style="width:100%">
       <tr>
         <th>Nombre</th>
         <th>Precios</th> 
       </tr>
+       <tr v-for="bebida in bebidas" :key="bebida">
+          <td>{{ bebida.nombre }}</td>
+           <td>{{ bebida.precio }}</td>
+        </tr>
     </table>
   </div>
 </template>
 
 <script>
-
-</script>
 import axios from "axios";
+
+export default {
+  data() {
+        return {
+            bebidas: []
+        }
+    },
+  methods:{
+    obtenerBebidas: function(){
+      axios
+        .get("http://localhost:8080/restaurante/v1/bebidas")
+        .then(response => {
+          this.bebidas = response.data;
+        })
+        .catch(response=>alert("Error al recuperar datos "+response.status));
+      }
+  },
+   created(){
+     this.obtenerBebidas();
+    }
+    
+}
+</script>
+
 
 <style scoped>
 
