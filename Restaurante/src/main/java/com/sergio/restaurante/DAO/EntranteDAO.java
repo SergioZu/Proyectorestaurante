@@ -7,8 +7,8 @@ import com.sergio.restaurante.DTO.EntranteDTO;
 
 public interface EntranteDAO {
 
-	List<EntranteDTO> visualizarBebidas(int id, String nombre, int precio);
-	Integer insertarNuevaBebida(int id,String nombre,int precio);
-	Integer modificarBebida(int id,String nombre,int precio);
-	Integer eliminarBebida(int id);
+	List<EntranteDTO> visualizarEntrante(int id, String nombre, int precio);
+	Integer insertarNuevaEntrante(int id,String nombre,int precio);
+	Integer modificarEntrante(int id,String nombre,int precio);
+	Integer eliminarEntrante(int id);
 }

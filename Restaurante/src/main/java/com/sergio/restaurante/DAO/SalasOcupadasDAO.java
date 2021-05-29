@@ -6,9 +6,8 @@ import com.sergio.restaurante.DTO.SalasOcupadasDTO;
 
 public interface SalasOcupadasDAO {
 	
-	List<SalasOcupadasDTO> visualizarBebidas(int id, String nombre, String nombreOcupante);
-	Integer insertarNuevaBebida(int id,String nombre,String nombreOcupante);
-	Integer modificarBebida(int id,String nombre,String nombreOcupante);
-	Integer eliminarBebida(int id);
+	List<SalasOcupadasDTO> visualizarSalasOcupadas(int id, String nombre, String nombreOcupante);
+	Integer insertarNuevaSalasOcupadas(int id,String nombre,String nombreOcupante);
+	Integer eliminarSalasOcupadas(int id);
 
 }

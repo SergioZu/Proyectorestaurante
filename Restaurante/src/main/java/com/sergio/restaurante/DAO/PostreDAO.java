@@ -7,9 +7,9 @@ import com.sergio.restaurante.DTO.PostreDTO;
 
 public interface PostreDAO {
 	
-	List<PostreDTO> visualizarBebidas(int id, String nombre, int precio);
-	Integer insertarNuevaBebida(int id,String nombre,int precio);
-	Integer modificarBebida(int id,String nombre,int precio);
-	Integer eliminarBebida(int id);
+	List<PostreDTO> visualizarPostre(int id, String nombre, int precio);
+	Integer insertarNuevaPostre(int id,String nombre,int precio);
+	Integer modificarPostre(int id,String nombre,int precio);
+	Integer eliminarPostre(int id);
 
 }
