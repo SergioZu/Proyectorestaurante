@@ -1,6 +1,7 @@
 <template>
-<h2> Nueva Bebida:</h2>
+
   <div class="nuevaBebidas">
+      <h2>Insertar</h2>
     <form>
       <label >Nombre de la Bebida:</label><br>
       <input type="text"  v-model="nombreBebida"><br>
@@ -17,7 +18,6 @@ import axios from "axios";
 export default {
   data() {
         return {
-            equipos: [],
             nombreBebida:"",
             precioBebidas:""
         }
@@ -42,6 +42,8 @@ export default {
 
 .nuevaBebidas{
   width: 100%;
+  position: absolute;
+  top:500px;
 }
 
 </style>
