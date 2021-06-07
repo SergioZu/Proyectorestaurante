@@ -1,10 +1,12 @@
 <template>
  <table style="width:100%">
       <tr>
+        <th>id</th>
         <th>Nombre</th>
         <th>Precios</th> 
       </tr>
        <tr v-for="bebida in bebidas" :key="bebida">
+          <td>{{ bebida.id }}</td>
           <td>{{ bebida.nombre }}</td>
            <td>{{ bebida.precio }}</td>
         </tr>
@@ -40,13 +42,15 @@ export default {
 </script>
 
 <style scoped>
-.datosJugador{
-  width: 30%;
-  margin-left: 60%;
+
+table{
+   position: absolute;
 }
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+ 
 }
 th, td {
   padding: 15px;
