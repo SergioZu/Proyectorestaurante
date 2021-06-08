@@ -13,7 +13,7 @@ import com.sergio.restaurante.entities.SalasOcupadasEntity;
 
 
 @Repository
-public interface SalasOcupadas extends CrudRepository<SalasOcupadasEntity, Integer>{
+public interface SalasOcupadasRepository extends CrudRepository<SalasOcupadasEntity, Integer>{
 
 	@Query(value = "select new com.sergio.restaurante.DTO.SalasOcupadasDTO (so.id,so.nombre,so.nombreOcupante) "
 			+ "FROM com.sergio.restaurante.entities.SalasOcupadasEntity so "
