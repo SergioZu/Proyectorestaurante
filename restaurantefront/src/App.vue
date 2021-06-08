@@ -5,6 +5,7 @@
       <li><router-link to="/bebidas">Bebida</router-link></li>
        <li><router-link to="/entrantes">Entrantes</router-link></li>
        <li><router-link to="/primerplato">Primer Plato</router-link></li>
+       <li><router-link to="/segundoplato">Segundo Plato</router-link></li>
     </ul>
 
   </div>
