@@ -27,25 +27,25 @@ public class SalasOcupadasREST {
 	@Autowired
 	private SalasOcupadasRepository salasocupadasRepository;
 	
-	@GetMapping(value = "/salasdisponible")
-	public Iterable<SalasOcupadasEntity> listarTodosSalasDisponible() {
+	@GetMapping(value = "/salasocupadas")
+	public Iterable<SalasOcupadasEntity> listarTodosSalasOcupadase() {
 		return salasocupadasRepository.findAll();
 	}
 	
-	@GetMapping(value = "/salasdisponible/{id}")
-	public Optional<SalasOcupadasEntity> listarSalasDisponiblePorId(@PathVariable("id") Integer id) {
+	@GetMapping(value = "/salasocupadas/{id}")
+	public Optional<SalasOcupadasEntity> listarSalasOcupadasePorId(@PathVariable("id") Integer id) {
 		return salasocupadasRepository.findById(id);
 	}
 	
-	@PostMapping("/salasdisponible")
-	public ResponseEntity <String> insertarSalasDisponible(@RequestBody SalasOcupadasEntity salasocupadas){
+	@PostMapping("/salasocupadas")
+	public ResponseEntity <String> insertarSalasOcupadase(@RequestBody SalasOcupadasEntity salasocupadas){
 		salasocupadasRepository.save(salasocupadas);
 		return new ResponseEntity<>("Inserción correcta!",HttpStatus.OK);
 		
 	}
 	
-	@DeleteMapping("/salasdisponible/{id}")
-	public ResponseEntity <String> eliminarSalasDisponible(@PathVariable("id") Integer id){
+	@DeleteMapping("/salasocupadas/{id}")
+	public ResponseEntity <String> eliminarSalasOcupadase(@PathVariable("id") Integer id){
 		salasocupadasRepository.deleteById(id);
 		return new ResponseEntity<>("Eliminación correcta!",HttpStatus.OK);
 	}

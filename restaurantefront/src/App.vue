@@ -3,6 +3,7 @@
     <ul>
       <li><router-link to="/">Inicio</router-link></li>
       <li><router-link to="/bebidas">Bebida</router-link></li>
+       <li><router-link to="/entrantes">Entrantes</router-link></li>
     </ul>
 
   </div>
