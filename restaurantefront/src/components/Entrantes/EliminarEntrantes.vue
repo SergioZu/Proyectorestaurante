@@ -1,12 +1,12 @@
 <template>
 
   <div class="eliminarBebidas">
-      <h2>Insertar</h2>
+      <h2>Eliminar</h2>
     <form>
-      <label >Bebida:</label><br>
-        <select name="select" v-model="idBebida" >
+      <label >Entrante:</label><br>
+        <select name="select" v-model="idEntrante" >
         <option >...</option>
-        <option v-for="bebida in bebidas" :key="bebida" >{{bebida.id}}</option>
+        <option v-for="entrante in entrantes" :key="entrante" >{{entrante.id}}</option>
       </select><br>
       <button type="button"  @click="eliminarBebida()">enviar</button>
     </form>
@@ -19,22 +19,22 @@ import axios from "axios";
 export default {
   data() {
         return {
-            bebidas:[],
-            idBebida:""
+            entrantes:[],
+            idEntrante:""
         }
     },
   
     methods:{
     obtenerBebidas: function(){
       axios
-        .get("http://localhost:8080/restaurante/v1/bebidas")
+        .get("http://localhost:8080/restaurante/v1/entrante")
         .then(response => {
-          this.bebidas = response.data;
+          this.entrantes = response.data;
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       },
       eliminarBebida: function(){
-        axios.delete("http://localhost:8080/restaurante/v1/bebidas/"+this.idBebida).then((result) => {
+        axios.delete("http://localhost:8080/restaurante/v1/entrante/"+this.idEntrante).then((result) => {
             alert("Se ha eliminado la Bebida Correctamente");
             });
         }
