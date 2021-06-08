@@ -3,7 +3,7 @@ create database Restaurante;
 use  Restaurante;
 
 drop table `Entrantes`;
-select * from `Bebidas`;
+select * from `SalasDisponibles`;
 
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
