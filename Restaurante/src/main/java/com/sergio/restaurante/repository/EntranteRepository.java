@@ -14,7 +14,7 @@ import com.sergio.restaurante.entities.EntranteEntity;
 
 
 @Repository
-public interface EntrateRepository extends CrudRepository<EntranteEntity, Integer>{
+public interface EntranteRepository extends CrudRepository<EntranteEntity, Integer>{
 
 	@Query(value = "select new com.sergio.restaurante.DTO.EntranteDTO (e.id,e.nombre,e.precio) "
 			+ "FROM com.sergio.restaurante.entities.EntranteEntity e "
