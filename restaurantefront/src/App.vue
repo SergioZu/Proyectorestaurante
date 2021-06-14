@@ -74,7 +74,6 @@
                         <div class="menu-item" v-for="entrante in entrantes" :key="entrante">
                             <div class="menu-item-name"> {{ entrante.nombre }}</div>
                             <div class="menu-item-price">{{ entrante.precio }} </div>
-                            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
                         </div>
                     </div>
                 </div>
@@ -85,7 +84,6 @@
                         <div class="menu-item" v-for="primerplato in primerplatos" :key="primerplato">
                             <div class="menu-item-name"> {{ primerplato.nombre }} </div>
                             <div class="menu-item-price">{{ primerplato.precio }} </div>
-                            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
                         </div>
                     </div>
                 </div>
@@ -98,7 +96,6 @@
                         <div class="menu-item" v-for="segundoplato in segundoplatos" :key="segundoplato">
                             <div class="menu-item-name"> {{ segundoplato.nombre }} </div>
                             <div class="menu-item-price">{{ segundoplato.precio }} </div>
-                            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +106,6 @@
                         <div class="menu-item"  v-for="postre in postres" :key="postre">
                             <div class="menu-item-name"> {{ postre.nombre }} </div>
                             <div class="menu-item-price">{{ postre.precio }}</div>
-                            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
                         </div>
                         
                     </div>
@@ -121,7 +117,6 @@
                         <div class="menu-item"  v-for="bebida in bebidas" :key="bebida">
                             <div class="menu-item-name"> {{ bebida.nombre }} </div>
                             <div class="menu-item-price">{{ bebida.precio }}</div>
-                            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
                         </div>
                         
                     </div>
