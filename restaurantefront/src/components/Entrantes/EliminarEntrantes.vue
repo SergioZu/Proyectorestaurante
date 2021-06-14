@@ -6,7 +6,7 @@
       <label >Entrante:</label><br>
         <select name="select" v-model="idEntrante" >
         <option >...</option>
-        <option v-for="entrante in entrantes" :key="entrante" >{{entrante.id}}</option>
+        <option v-for="entrante in entrantes" :key="entrante" :value='entrante.id'>{{entrante.nombre}}</option>
       </select><br>
       <button type="button"  @click="eliminarEntrantes()">enviar</button>
     </form>

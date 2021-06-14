@@ -6,7 +6,7 @@
       <label >Segundo Plato:</label><br>
         <select name="select" v-model="idSegundoPlato" >
         <option >...</option>
-        <option v-for="segundoplato in segundoplatos" :key="segundoplato" >{{segundoplato.id}}</option>
+        <option v-for="segundoplato in segundoplatos" :key="segundoplato" :value='segundoplato.id'>{{segundoplato.nombre}}</option>
       </select><br>
       <button type="button"  @click="eliminarSegundoPlato()">enviar</button>
     </form>

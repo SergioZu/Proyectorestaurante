@@ -6,7 +6,7 @@
       <label >Primer Plato:</label><br>
         <select name="select" v-model="idPrimerPlato" >
         <option >...</option>
-        <option v-for="primerplato in primerplatos" :key="primerplato" >{{primerplato.id}}</option>
+        <option v-for="primerplato in primerplatos" :key="primerplato" :value='primerplato.id'>{{primerplato.nombre}}</option>
       </select><br>
       <button type="button"  @click="eliminarPrimerPlato()">enviar</button>
     </form>

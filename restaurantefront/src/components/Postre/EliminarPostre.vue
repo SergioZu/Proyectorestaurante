@@ -6,7 +6,7 @@
       <label >Postres:</label><br>
         <select name="select" v-model="idPostres" >
         <option >...</option>
-        <option v-for="postre in postres" :key="postre" >{{postre.id}}</option>
+        <option v-for="postre in postres" :key="postre" :value='postre.id'>{{postre.nombre}}</option>
       </select><br>
       <button type="button"  @click="eliminarPostre()">enviar</button>
     </form>
