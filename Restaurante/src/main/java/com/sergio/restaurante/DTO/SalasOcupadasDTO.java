@@ -4,14 +4,24 @@ public class SalasOcupadasDTO {
 
 	private int id;
 	private String nombre;
-	private String nombreOcupante;
+	private String nombreocupante;
 	
-	public SalasOcupadasDTO(int id, String nombre, String nombreOcupante) {
+	public SalasOcupadasDTO(int id, String nombre, String nombreocupante) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.nombreOcupante = nombreOcupante;
+		this.nombreocupante = nombreocupante;
 	}
+	
+	
+
+	public SalasOcupadasDTO(String nombre, String nombreocupante) {
+		super();
+		this.nombre = nombre;
+		this.nombreocupante = nombreocupante;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -30,11 +40,11 @@ public class SalasOcupadasDTO {
 	}
 
 	public String getNombreOcupante() {
-		return nombreOcupante;
+		return nombreocupante;
 	}
 
 	public void setNombreOcupante(String nombreOcupante) {
-		this.nombreOcupante = nombreOcupante;
+		this.nombreocupante = nombreocupante;
 	}
 	
 	

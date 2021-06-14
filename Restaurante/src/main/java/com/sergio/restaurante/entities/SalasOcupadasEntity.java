@@ -17,8 +17,8 @@ public class SalasOcupadasEntity {
 	private String nombre;
 	
 	
-	@Column(name = "nombreOcupante")
-	private String nombreOcupante;
+	@Column(name = "nombreocupante")
+	private String nombreocupante;
 
 
 	public SalasOcupadasEntity() {
@@ -26,18 +26,18 @@ public class SalasOcupadasEntity {
 	}
 
 
-	public SalasOcupadasEntity(int id, String nombre, String nombreOcupante) {
+	public SalasOcupadasEntity(int id, String nombre, String nombreocupante) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.nombreOcupante = nombreOcupante;
+		this.nombreocupante = nombreocupante;
 	}
 
 
-	public SalasOcupadasEntity(String nombre, String nombreOcupante) {
+	public SalasOcupadasEntity(String nombre, String nombreocupante) {
 		super();
 		this.nombre = nombre;
-		this.nombreOcupante = nombreOcupante;
+		this.nombreocupante = nombreocupante;
 	}
 
 
@@ -62,12 +62,12 @@ public class SalasOcupadasEntity {
 
 
 	public String getNombreOcupante() {
-		return nombreOcupante;
+		return nombreocupante;
 	}
 
 
 	public void setNombreOcupante(String nombreOcupante) {
-		this.nombreOcupante = nombreOcupante;
+		this.nombreocupante = nombreOcupante;
 	}
 	
 	
