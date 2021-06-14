@@ -1,6 +1,6 @@
 <template>
 
-  <div class="eliminarBebidas">
+  <div class="eliminarPrimerPlato">
       <h2>Eliminar</h2>
     <form>
       <label >Primer Plato:</label><br>
@@ -8,7 +8,7 @@
         <option >...</option>
         <option v-for="primerplato in primerplatos" :key="primerplato" >{{primerplato.id}}</option>
       </select><br>
-      <button type="button"  @click="eliminarBebida()">enviar</button>
+      <button type="button"  @click="eliminarPrimerPlato()">enviar</button>
     </form>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       },
-      eliminarBebida: function(){
+      eliminarPrimerPlato: function(){
         axios.delete("http://localhost:8080/restaurante/v1/primerplato/"+this.idPrimerPlato).then((result) => {
             alert("Se ha eliminado la Bebida Correctamente");
             });
@@ -48,11 +48,16 @@ export default {
 
 <style>
 
-.eliminarBebidas{
-  width: 100%;
-  position: absolute;
-  top:500px;
-  left: 400px;
+.eliminarPrimerPlato{
+   width: 40%;
+    position: absolute;
+    left: 1300px;
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 </style>

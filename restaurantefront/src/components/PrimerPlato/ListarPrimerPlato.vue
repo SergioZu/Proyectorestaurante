@@ -1,5 +1,7 @@
 <template>
- <table style="width:100%">
+<div class="listarPrimerPlato">
+<h2>Listado</h2>
+<table style="width:100%">
       <tr>
         <th>id</th>
         <th>Nombre</th>
@@ -11,6 +13,8 @@
            <td>{{ primerplato.precio }}</td>
         </tr>
     </table>
+</div>
+ 
 </template>
 
 <script>
@@ -24,7 +28,7 @@ export default {
         }
     },
   methods:{
-    obtenerBebidas: function(){
+    listarPrimerPlato: function(){
       axios
         .get("http://localhost:8080/restaurante/v1/primerplato")
         .then(response => {
@@ -34,7 +38,7 @@ export default {
       }
   },
    created(){
-     this.obtenerBebidas();
+     this.listarPrimerPlato();
     }
     
 }
@@ -43,17 +47,23 @@ export default {
 
 <style scoped>
 
-table{
-   position: absolute;
+.listarPrimerPlato{
+   width: 75%;
+  position: absolute;
 }
 
-table, th, td {
-  border: 1px solid black;
+
+table {
   border-collapse: collapse;
- 
+  width: 100%;
 }
+
 th, td {
-  padding: 15px;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
+
+tr:hover {background-color:#f5f5f5;}
 
 </style>

@@ -1,5 +1,7 @@
 <template>
- <table style="width:100%">
+<div class="listarBebidas">
+  <h2>Listado</h2>
+  <table style="width:100%">
       <tr>
         <th>id</th>
         <th>Nombre</th>
@@ -11,6 +13,8 @@
            <td>{{ bebida.precio }}</td>
         </tr>
     </table>
+  </div>
+ 
 </template>
 
 <script>
@@ -43,17 +47,22 @@ export default {
 
 <style scoped>
 
-table{
-   position: absolute;
+.listarBebidas{
+   width: 75%;
+  position: absolute;
 }
 
-table, th, td {
-  border: 1px solid black;
+
+table {
   border-collapse: collapse;
- 
-}
-th, td {
-  padding: 15px;
+  width: 100%;
 }
 
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
 </style>

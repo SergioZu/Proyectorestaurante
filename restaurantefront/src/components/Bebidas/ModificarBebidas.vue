@@ -1,17 +1,17 @@
 <template>
 
   <div class="modificarBebidas">
-      <h2> Modificar Bebida:</h2>
+      <h2> Modificar </h2>
     <form>
-     
+       <label >Id de  bebidas:</label><br>
       <select name="select" v-model="idBebida">
         <option >...</option>
-        <option v-for="bebida in bebidas" :key="bebida">{{bebida.id}}</option>
+        <option v-for="bebida in bebidas" :key="bebida" :value='bebida.id'>{{bebida.nombre}}</option>
       </select><br>
        <label >Nombre de la bebidas:</label><br>
       <input type="text" v-model="nombreBebida"><br>
       <label >Precio de la bebidas:</label><br>
-      <input type="number" v-model="precioBebidas"><br>
+      <input type="number" v-model="precioBebidas"><br><br>
       <button type="button"  @click="modificarBebida()">enviar</button>
     </form>
   </div>
@@ -60,9 +60,16 @@ export default {
 <style>
 
 .modificarBebidas{
-  width: 100%;
+ width: 45%;
   position: absolute;
   left: 500px;
+}
+
+input[type=text] {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 </style>

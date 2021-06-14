@@ -1,18 +1,18 @@
 <template>
 
-  <div class="modificarBebidas">
+  <div class="modificarPrimerPlato">
       <h2> Modificar Primer Plato:</h2>
     <form>
      
       <select name="select" v-model="idPrimerPlato">
         <option >...</option>
-        <option v-for="primerplato in primerplatos" :key="primerplato">{{primerplato.id}}</option>
+        <option v-for="primerplato in primerplatos" :key="primerplato" :value='primerplato.id'>{{primerplato.nombre}}</option>
       </select><br>
        <label >Nombre delPrimerPlato:</label><br>
       <input type="text" v-model="nombrePrimerPlato"><br>
       <label >Precio del PrimerPlato:</label><br>
       <input type="number" v-model="precioPrimerPlato"><br>
-      <button type="button"  @click="modificarBebida()">enviar</button>
+      <button type="button"  @click="modificarPrimerPlato()">enviar</button>
     </form>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       },
-      modificarBebida: function(){
+      modificarPrimerPlato: function(){
         let primerplatos={
           id:this.idPrimerPlato,
           nombre:this.nombrePrimerPlato,
@@ -59,10 +59,17 @@ export default {
 
 <style>
 
-.modificarBebidas{
-  width: 100%;
+.modificarPrimerPlato{
+ width: 45%;
   position: absolute;
   left: 500px;
+}
+
+input[type=text] {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 </style>

@@ -1,13 +1,13 @@
 <template>
 
   <div class="eliminarBebidas">
-      <h2>Insertar</h2>
+      <h2>Eliminar</h2>
     <form>
       <label >Bebida:</label><br>
         <select name="select" v-model="idBebida" >
         <option >...</option>
-        <option v-for="bebida in bebidas" :key="bebida" >{{bebida.id}}</option>
-      </select><br>
+        <option v-for="bebida in bebidas" :key="bebida" :value='bebida.id'>{{bebida.nombre}}</option>
+      </select><br><br>
       <button type="button"  @click="eliminarBebida()">enviar</button>
     </form>
   </div>
@@ -49,10 +49,15 @@ export default {
 <style>
 
 .eliminarBebidas{
-  width: 100%;
-  position: absolute;
-  top:500px;
-  left: 400px;
+   width: 40%;
+    position: absolute;
+    left: 1300px;
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 </style>

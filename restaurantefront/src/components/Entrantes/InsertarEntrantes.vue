@@ -1,13 +1,13 @@
 <template>
 
-  <div class="nuevaBebidas">
+  <div class="nuevaEntrantes">
       <h2>Insertar</h2>
     <form>
       <label >Nombre del Entrante:</label><br>
       <input type="text"  v-model="nombreEntrante"><br>
       <label >Precio del Entrante:</label><br>
       <input type="number" v-model="precioEntrante"><br>
-      <button type="button"  @click="crearBebida()">enviar</button>
+      <button type="button"  @click="nuevaEntrante()">enviar</button>
     </form>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     },
   
     methods:{
-      crearBebida: function(){
+      nuevaEntrante: function(){
         let entrantes={
           nombre:this.nombreEntrante,
           precio:this.precioEntrante,
@@ -39,11 +39,17 @@ export default {
 </script>
 
 <style>
-
-.nuevaBebidas{
-  width: 100%;
+.nuevaEntrantes{
+ width: 45%;
   position: absolute;
-  top:500px;
+  left:900px;
+}
+
+input[type=text] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 </style>

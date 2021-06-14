@@ -6,8 +6,8 @@
       <label >Nombre de la Bebida:</label><br>
       <input type="text"  v-model="nombreBebida"><br>
       <label >Precio de la bebidas:</label><br>
-      <input type="number" v-model="precioBebidas"><br>
-      <button type="button"  @click="crearBebida()">enviar</button>
+      <input type="number" v-model="precioBebidas"><br><br>
+      <button type="button"  @click="nuevaBebida()">enviar</button>
     </form>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     },
   
     methods:{
-      crearBebida: function(){
+      nuevaBebida: function(){
         let bebidas={
           nombre:this.nombreBebida,
           precio:this.precioBebidas,
@@ -41,9 +41,16 @@ export default {
 <style>
 
 .nuevaBebidas{
-  width: 100%;
+ width: 45%;
   position: absolute;
-  top:500px;
+  left:900px;
+}
+
+input[type=text] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 </style>

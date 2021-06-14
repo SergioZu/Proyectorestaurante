@@ -1,18 +1,18 @@
 <template>
 
-  <div class="modificarBebidas">
+  <div class="modificarEntrantes">
       <h2> Modificar Entrante:</h2>
     <form>
      
       <select name="select" v-model="idEntrante">
         <option >...</option>
-        <option v-for="entrante in entrantes" :key="entrante">{{entrante.id}}</option>
+        <option v-for="entrante in entrantes" :key="entrante" :value='entrante.id'>{{entrante.nombre}}</option>
       </select><br>
        <label >Nombre del Entrante:</label><br>
       <input type="text" v-model="nombreEntrante"><br>
       <label >Precio del Entrante:</label><br>
       <input type="number" v-model="precioEntrante"><br>
-      <button type="button"  @click="modificarBebida()">enviar</button>
+      <button type="button"  @click="modificarEntrante()">enviar</button>
     </form>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     },
   
     methods:{
-      obtenerBebidas: function(){
+      obtenerEntrantes: function(){
       axios
         .get("http://localhost:8080/restaurante/v1/entrante")
         .then(response => {
@@ -39,7 +39,7 @@ export default {
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       },
-      modificarBebida: function(){
+      modificarEntrante: function(){
         let entrantes={
           id:this.idEntrante,
           nombre:this.nombreEntrante,
@@ -51,7 +51,7 @@ export default {
         }
     },
      created(){
-     this.obtenerBebidas();
+     this.obtenerEntrantes();
     }
   
 }
@@ -59,10 +59,17 @@ export default {
 
 <style>
 
-.modificarBebidas{
-  width: 100%;
+.modificarEntrantes{
+ width: 45%;
   position: absolute;
   left: 500px;
+}
+
+input[type=text] {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 </style>

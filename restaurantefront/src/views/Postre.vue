@@ -30,9 +30,10 @@ export default {
 <style scoped>
 
 .clasificacion{
-  width: 30%;
-  margin-left: 20%;
+   width: 30%;
+  margin-left: 10%;
   position: absolute;
+  padding-bottom:20%;
  
 }
 

@@ -1,4 +1,6 @@
 <template>
+<div class="listarEntrantes">
+<h2>Listado</h2>
  <table style="width:100%">
       <tr>
         <th>id</th>
@@ -11,6 +13,8 @@
            <td>{{ entrante.precio }}</td>
         </tr>
     </table>
+</div>
+
 </template>
 
 <script>
@@ -24,7 +28,7 @@ export default {
         }
     },
   methods:{
-    obtenerBebidas: function(){
+    listarEntrantes: function(){
       axios
         .get("http://localhost:8080/restaurante/v1/entrante")
         .then(response => {
@@ -34,7 +38,7 @@ export default {
       }
   },
    created(){
-     this.obtenerBebidas();
+     this.listarEntrantes();
     }
     
 }
@@ -43,17 +47,22 @@ export default {
 
 <style scoped>
 
-table{
-   position: absolute;
+.listarEntrantes{
+   width: 75%;
+  position: absolute;
 }
 
-table, th, td {
-  border: 1px solid black;
+
+table {
   border-collapse: collapse;
- 
-}
-th, td {
-  padding: 15px;
+  width: 100%;
 }
 
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
 </style>
