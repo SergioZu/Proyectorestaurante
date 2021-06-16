@@ -1,9 +1,8 @@
-create database Restaurante;
+drop database restaurante;
+create database restaurante;
 
-use  Restaurante;
+use  restaurante;
 
-drop table `Entrantes`;
-select * from `SalasDisponibles`;
 
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -62,11 +61,34 @@ CREATE TABLE `SalasDisponibles` (
 
 INSERT INTO `SalasDisponibles` VALUES (1,'Mesa 1'),(2,'Mesa 2'),(3,'Mesa 3'),(4,'Mesa 4'),(5,'Mesa 5');
 
+DROP TABLE  `SalasDisponibles`;
+DROP TABLE  `SalasOcupadas`;
 CREATE TABLE `SalasOcupadas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
-  `nombreOcupante` varchar(45) NOT NULL,
+  `nombreocupante` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `menu` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_entrantes` int DEFAULT NULL,
+  `id_platosprincipal` int DEFAULT NULL,
+  `id_platosecundario` int DEFAULT NULL,
+  `id_postre` int DEFAULT NULL,
+  `id_bebidas` int DEFAULT NULL,
+  `precio` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_idx` (`id_entrantes`),
+  KEY `id_idx1` (`id_platosprincipal`),
+   KEY `id_idx2` (`id_platosecundario`),
+  KEY `id_idx3` (`id_postre`),
+   KEY `id_idx4` (`id_bebidas`),
+  CONSTRAINT `id` FOREIGN KEY (`id_entrantes`) REFERENCES `Entrantes` (`id`),
+  CONSTRAINT `id_platosprincipal` FOREIGN KEY (`id_platosprincipal`) REFERENCES `PlatoPrincipal` (`id`),
+  CONSTRAINT `id_platosecundario` FOREIGN KEY (`id_platosecundario`) REFERENCES `PlatoSecundario` (`id`),
+  CONSTRAINT `id_postre` FOREIGN KEY (`id_postre`) REFERENCES `Bebidas` (`id`),
+  CONSTRAINT `id_bebidas` FOREIGN KEY (`id_bebidas`) REFERENCES `Postre` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
