@@ -23,17 +23,8 @@ public class MenuEntity {
 	private Integer id;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "id_bebidas")
-	private BebidasEntity bebida;
-	
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "id_entrantes")
 	private EntranteEntity entrante;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "id_postre")
-	private PostreEntity postre;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "id_platosprincipal")
@@ -43,104 +34,97 @@ public class MenuEntity {
 	@JoinColumn(name = "id_platosecundario")
 	private SegundoPlatoEntity segundoplato;
 	
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "id_postre")
+	private PostreEntity postre;
+	
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "id_bebidas")
+	private BebidasEntity bebida;
 	
 	@Column(name = "precio")
 	private Integer precio;
 
-
-	public MenuEntity(Integer id, BebidasEntity bebida, EntranteEntity entrante, PostreEntity postre,
-			PrimerPlatoEntity primerplato, SegundoPlatoEntity segundoplato, Integer precio) {
+	public MenuEntity(Integer id, EntranteEntity entrante, PrimerPlatoEntity primerplato,
+			SegundoPlatoEntity segundoplato, PostreEntity postre, BebidasEntity bebida, Integer precio) {
 		super();
 		this.id = id;
-		this.bebida = bebida;
 		this.entrante = entrante;
-		this.postre = postre;
 		this.primerplato = primerplato;
 		this.segundoplato = segundoplato;
+		this.postre = postre;
+		this.bebida = bebida;
 		this.precio = precio;
 	}
 
-
-	public MenuEntity(BebidasEntity bebida, EntranteEntity entrante, PostreEntity postre, PrimerPlatoEntity primerplato,
-			SegundoPlatoEntity segundoplato, Integer precio) {
+	public MenuEntity(EntranteEntity entrante, PrimerPlatoEntity primerplato, SegundoPlatoEntity segundoplato,
+			PostreEntity postre, BebidasEntity bebida, Integer precio) {
 		super();
-		this.bebida = bebida;
 		this.entrante = entrante;
-		this.postre = postre;
 		this.primerplato = primerplato;
 		this.segundoplato = segundoplato;
+		this.postre = postre;
+		this.bebida = bebida;
 		this.precio = precio;
 	}
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
-	public BebidasEntity getBebida() {
-		return bebida;
-	}
-
-
-	public void setBebida(BebidasEntity bebida) {
-		this.bebida = bebida;
-	}
-
 
 	public EntranteEntity getEntrante() {
 		return entrante;
 	}
 
-
 	public void setEntrante(EntranteEntity entrante) {
 		this.entrante = entrante;
 	}
-
-
-	public PostreEntity getPostre() {
-		return postre;
-	}
-
-
-	public void setPostre(PostreEntity postre) {
-		this.postre = postre;
-	}
-
 
 	public PrimerPlatoEntity getPrimerplato() {
 		return primerplato;
 	}
 
-
 	public void setPrimerplato(PrimerPlatoEntity primerplato) {
 		this.primerplato = primerplato;
 	}
-
 
 	public SegundoPlatoEntity getSegundoplato() {
 		return segundoplato;
 	}
 
-
 	public void setSegundoplato(SegundoPlatoEntity segundoplato) {
 		this.segundoplato = segundoplato;
 	}
 
+	public PostreEntity getPostre() {
+		return postre;
+	}
+
+	public void setPostre(PostreEntity postre) {
+		this.postre = postre;
+	}
+
+	public BebidasEntity getBebida() {
+		return bebida;
+	}
+
+	public void setBebida(BebidasEntity bebida) {
+		this.bebida = bebida;
+	}
 
 	public Integer getPrecio() {
 		return precio;
 	}
 
-
 	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
+
+
 	
 	
 	
