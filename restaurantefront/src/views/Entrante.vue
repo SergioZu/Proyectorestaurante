@@ -34,7 +34,6 @@ export default {
   margin-left: 10%;
   position: absolute;
   padding-bottom:20%;
- 
 }
 
 

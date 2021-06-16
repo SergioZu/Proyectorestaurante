@@ -63,10 +63,11 @@ export default {
  width: 45%;
   position: absolute;
   left: 500px;
+ font-size:10px;
 }
 
 input[type=text] {
-  width: 75%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;

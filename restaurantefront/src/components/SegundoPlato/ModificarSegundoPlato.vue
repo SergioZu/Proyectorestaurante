@@ -64,6 +64,8 @@ export default {
  width: 45%;
   position: absolute;
   left: 500px;
+  
+ font-size:10px;
 }
 
 input[type=text] {

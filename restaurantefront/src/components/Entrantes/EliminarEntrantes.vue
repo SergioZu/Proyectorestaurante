@@ -51,11 +51,12 @@ export default {
 .eliminarEntrantes{
    width: 40%;
     position: absolute;
-    left: 1300px;
+    left: 1100px;
+ font-size:10px;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;

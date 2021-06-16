@@ -51,7 +51,7 @@ export default {
 .eliminarPrimerPlato{
    width: 40%;
     position: absolute;
-    left: 1300px;
+    left: 1100px;
 }
 
 input[type=text] {

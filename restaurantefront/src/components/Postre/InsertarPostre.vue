@@ -43,7 +43,7 @@ export default {
 .nuevaPostre{
  width: 45%;
   position: absolute;
-  left:900px;
+  left:800px;
 }
 
 input[type=text] {

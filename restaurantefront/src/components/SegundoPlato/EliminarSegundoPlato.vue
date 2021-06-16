@@ -51,7 +51,8 @@ export default {
 .eliminarSegundoPlato{
    width: 40%;
     position: absolute;
-    left: 1300px;
+    left: 1100px;
+ font-size:10px;
 }
 
 input[type=text] {
