@@ -3,6 +3,7 @@ create database restaurante;
 
 use  restaurante;
 
+select *from `menu`;
 
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -81,9 +82,9 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`),
   KEY `id_idx` (`id_entrantes`),
   KEY `id_idx1` (`id_platosprincipal`),
-   KEY `id_idx2` (`id_platosecundario`),
+  KEY `id_idx2` (`id_platosecundario`),
   KEY `id_idx3` (`id_postre`),
-   KEY `id_idx4` (`id_bebidas`),
+  KEY `id_idx4` (`id_bebidas`),
   CONSTRAINT `id` FOREIGN KEY (`id_entrantes`) REFERENCES `Entrantes` (`id`),
   CONSTRAINT `id_platosprincipal` FOREIGN KEY (`id_platosprincipal`) REFERENCES `PlatoPrincipal` (`id`),
   CONSTRAINT `id_platosecundario` FOREIGN KEY (`id_platosecundario`) REFERENCES `PlatoSecundario` (`id`),

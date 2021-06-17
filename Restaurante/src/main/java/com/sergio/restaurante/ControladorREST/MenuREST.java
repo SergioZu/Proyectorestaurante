@@ -28,31 +28,32 @@ public class MenuREST {
 	private MenuRepository menuRepository;
 	
 	@GetMapping(value = "/menu")
-	public Iterable<MenuEntity> listarTodasBebidas() {
+	public Iterable<MenuEntity> listarTodasMenu() {
 		return menuRepository.findAll();
 	}
 	
 	@GetMapping(value = "/menu/{id}")
-	public Optional<MenuEntity> listarBebidasPorId(@PathVariable("id") Integer id) {
+	public Optional<MenuEntity> listarMenuPorId(@PathVariable("id") Integer id) {
 		return menuRepository.findById(id);
 	}
 	
 	@PostMapping("/menu")
-	public ResponseEntity <String> insertarbebidas(@RequestBody MenuEntity bebidas){
-		menuRepository.save(bebidas);
+	public ResponseEntity <String> insertarMenu(@RequestBody MenuEntity menu){
+		System.out.println(menu.getPostre().getId());
+		menuRepository.save(menu);
 		return new ResponseEntity<>("Inserción correcta!",HttpStatus.OK);
 		
 	}
 	
 	@PutMapping("/menu/{id}")
-	public ResponseEntity <String> modificarbebidas(@RequestBody MenuEntity bebidas){
-		menuRepository.save(bebidas);
+	public ResponseEntity <String> modificarMenu(@RequestBody MenuEntity menu){
+		menuRepository.save(menu);
 		return new ResponseEntity<>("Modificación correcta!",HttpStatus.OK);
 		
 	}
 	
 	@DeleteMapping("/menu/{id}")
-	public ResponseEntity <String> eliminarbebidas(@PathVariable("id") Integer id){
+	public ResponseEntity <String> eliminarMenu(@PathVariable("id") Integer id){
 		menuRepository.deleteById(id);
 		return new ResponseEntity<>("Eliminación correcta!",HttpStatus.OK);
 		

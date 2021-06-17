@@ -44,6 +44,21 @@ public class MenuEntity {
 	
 	@Column(name = "precio")
 	private Integer precio;
+	
+	
+
+	public MenuEntity() {
+		super();
+	}
+	
+	
+
+	public MenuEntity(Integer id) {
+		super();
+		this.id = id;
+	}
+
+
 
 	public MenuEntity(Integer id, EntranteEntity entrante, PrimerPlatoEntity primerplato,
 			SegundoPlatoEntity segundoplato, PostreEntity postre, BebidasEntity bebida, Integer precio) {

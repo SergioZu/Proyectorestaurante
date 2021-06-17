@@ -10,6 +10,22 @@ public class MenuDTO {
 	private Integer idBebida;
 	private Integer precio;
 	
+	
+	
+	
+	public MenuDTO() {
+		super();
+	}
+	
+	
+
+	public MenuDTO(Integer id) {
+		super();
+		this.id = id;
+	}
+
+
+
 	public MenuDTO(Integer id, Integer idEntrante, Integer idPrimerPlato, Integer idSegundoPlato, Integer idPostre,
 			Integer idBebida, Integer precio) {
 		super();
