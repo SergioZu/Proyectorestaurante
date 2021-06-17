@@ -382,6 +382,7 @@
                                 <li><router-link to="/segundoplato">Segundo Plato</router-link></li>
                                 <li><router-link to="/postre">Postre</router-link></li>
                                 <li><router-link to="/salas">Salas</router-link></li>
+                                 <li><router-link to="/menu">Menu</router-link></li>
                             </ol>
                         </li>
                     </ul>
