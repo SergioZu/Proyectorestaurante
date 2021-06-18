@@ -22,6 +22,15 @@ public class PostreEntity {
 	public PostreEntity() {
 		super();
 	}
+	
+	
+
+	public PostreEntity(int id) {
+		super();
+		this.id = id;
+	}
+
+
 
 	public PostreEntity(int id, String nombre, int precio) {
 		super();

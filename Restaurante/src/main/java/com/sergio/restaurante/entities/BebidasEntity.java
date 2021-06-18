@@ -23,6 +23,13 @@ public class BebidasEntity {
 		super();
 	}
 
+	
+	public BebidasEntity(int id) {
+		super();
+		this.id = id;
+	}
+
+
 	public BebidasEntity(int id, String nombre, int precio) {
 		super();
 		this.id = id;

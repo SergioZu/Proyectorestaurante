@@ -4,13 +4,21 @@
  <table style="width:100%">
       <tr>
         <th>id</th>
-        <th>Nombre</th>
-        <th>Precios</th> 
+        <th>Entrante</th>
+        <th>Plato Principal</th>
+        <th>Segundo Plato</th>
+        <th>Postre</th>
+        <th>Bebida</th>
+        <th>Precio</th>
       </tr>
-       <tr v-for="entrante in entrantes" :key="entrante">
-          <td>{{ entrante.id }}</td>
-          <td>{{ entrante.nombre }}</td>
-           <td>{{ entrante.precio }}</td>
+       <tr v-for="menu in menus" :key="menu">
+          <td>{{ menu.id }}</td>
+          <td>{{ menu.id_entrantes }}</td>
+           <td>{{ menu.id_platosprincipal }}</td>
+           <td>{{ menu.id_platosecundario }}</td>
+           <td>{{ menu.id_postre }}</td>
+           <td>{{ menu.id_bebidas }}</td>
+           <td>{{ menu.precio }}€</td>
         </tr>
     </table>
 </div>
@@ -24,15 +32,16 @@ import axios from "axios";
 export default {
   data() {
         return {
-            entrantes: []
+            menus: []
         }
     },
   methods:{
     listarEntrantes: function(){
       axios
-        .get("http://localhost:8080/restaurante/v1/entrante")
+        .get("http://localhost:8080/restaurante/v1/menu")
         .then(response => {
-          this.entrantes = response.data;
+          this.menus = response.data;
+          console.log(this.menus);
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       }

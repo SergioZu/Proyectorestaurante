@@ -11,23 +11,30 @@ import com.sergio.restaurante.entities.MenuEntity;
 
 public interface MenuRepository extends CrudRepository<MenuEntity, Integer>{
 
-	@Query(value = "select new com.sergio.restaurante.DTO.MenuDTO (m.id,e.id,pp.id,sp.id,po.id,b.id,m.precio) "
-			+ "FROM com.sergio.restaurante.entities.MenuEntity m JOIN com.sergio.restaurante.entities.EntranteEntity e ON m.entrante.id = e.id "
-			+ "JOIN com.sergio.restaurante.entities.PrimerPlatoEntity pp ON m.primerplato.id = pp.id "
-			+ "JOIN com.sergio.restaurante.entities.SegundoPlatoEntity sp ON m.segundoplato.id = sp.id "
-			+ "JOIN com.sergio.restaurante.entities.PostreEntity po ON m.postre.id = po.id "
-			+ "JOIN com.sergio.restaurante.entities.BebidasEntity b ON m.bebida.id = b.id "
-			+ "WHERE (e.id LIKE CONCAT('%',:idEntrante,'%') or :idEntrante is null) "
-			+ "AND (pp.id LIKE CONCAT('%',:idPrimerPlato,'%') or :idPrimerPlato is null) "
-			+ "AND (sp.id LIKE CONCAT('%',:idSegundoPlato,'%') or :idSegundoPlato is null) "
-			+ "AND (po.id LIKE CONCAT('%',:idPostre,'%') or :idPostre is null) "
-			+ "AND (b.id LIKE CONCAT('%',:idBebida,'%') or :idBebida is null) "
+	@Query(value = "select new com.sergio.restaurante.DTO.MenuDTO (m.id,m.id_entrantes,m.id_platosprincipal,m.id_platosecundario,m.id_postre,m.id_bebidas,m.precio) "
+			+ "FROM com.sergio.restaurante.entities.MenuEntity m JOIN com.sergio.restaurante.entities.EntranteEntity e ON m.id_entrantes = e.id "
+			+ "JOIN com.sergio.restaurante.entities.PrimerPlatoEntity pp ON m.id_platosprincipal = pp.id "
+			+ "JOIN com.sergio.restaurante.entities.SegundoPlatoEntity sp ON m.id_platosecundario = sp.id "
+			+ "JOIN com.sergio.restaurante.entities.PostreEntity po ON m.id_postre = po.id "
+			+ "JOIN com.sergio.restaurante.entities.BebidasEntity b ON m.id_bebidas = b.id "
+			
+			+ "WHERE (m.id LIKE CONCAT('%',:id,'%') or :id is null) "
+			+ "AND (m.id_entrantes LIKE CONCAT('%',:id_entrantes,'%') or :id_entrantes is null) "
+			+ "AND (m.id_platosprincipal LIKE CONCAT('%',:id_platosprincipal,'%') or :id_platosprincipal is null) "
+			+ "AND (m.id_platosecundario LIKE CONCAT('%',:id_platosecundario,'%') or :id_platosecundario is null) "
+			+ "AND (m.id_postre LIKE CONCAT('%',:id_postre,'%') or :id_postre is null) "
+			+ "AND (m.id_bebidas LIKE CONCAT('%',:id_bebidas,'%') or :id_bebidas is null) "
 			+ "AND (m.precio LIKE CONCAT ('%',:precio,'%') or :precio is null ) ")
-	 		List<MenuDTO> obtenerMenuPorIDsPrecio(
-					  @Param("idEntrante") int idEntrante,
-					  @Param("idPrimerPlato") int idPrimerPlato,
-					  @Param("idSegundoPlato") int idSegundoPlato,
-					  @Param("idPostre") int idPostre,
-					  @Param("idBebida") int idBebida,
+	
+			List<MenuDTO> obtenerMenuPorIDsPrecio(
+						 @Param("id") int id,
+					  @Param("id_entrantes") int id_entrantes,
+					  @Param("id_platosprincipal") int id_platosprincipal,
+					  @Param("id_platosecundario") int id_platosecundario,
+					  @Param("id_postre") int id_postre,
+					  @Param("id_bebidas") int id_bebidas,
 					  @Param("precio") int precio);
+	
+
+	
 }

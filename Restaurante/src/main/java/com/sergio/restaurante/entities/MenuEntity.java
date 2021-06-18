@@ -1,14 +1,12 @@
 package com.sergio.restaurante.entities;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -16,35 +14,32 @@ import javax.persistence.Table;
 @Entity
 @Table(name="menu")
 public class MenuEntity {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	
 	@JoinColumn(name = "id_entrantes")
-	private EntranteEntity entrante;
+	private Integer id_entrantes;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "id_platosprincipal")
-	private PrimerPlatoEntity primerplato;
+	private Integer id_platosprincipal;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "id_platosecundario")
-	private SegundoPlatoEntity segundoplato;
+	private Integer id_platosecundario;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	
 	@JoinColumn(name = "id_postre")
-	private PostreEntity postre;
+	private Integer id_postre;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	
 	@JoinColumn(name = "id_bebidas")
-	private BebidasEntity bebida;
+	private Integer id_bebidas;
 	
 	@Column(name = "precio")
 	private Integer precio;
-	
 	
 
 	public MenuEntity() {
@@ -60,87 +55,117 @@ public class MenuEntity {
 
 
 
-	public MenuEntity(Integer id, EntranteEntity entrante, PrimerPlatoEntity primerplato,
-			SegundoPlatoEntity segundoplato, PostreEntity postre, BebidasEntity bebida, Integer precio) {
+	public MenuEntity(Integer id, Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario,
+			Integer id_postre, Integer id_bebidas, Integer precio) {
 		super();
 		this.id = id;
-		this.entrante = entrante;
-		this.primerplato = primerplato;
-		this.segundoplato = segundoplato;
-		this.postre = postre;
-		this.bebida = bebida;
+		this.id_entrantes = id_entrantes;
+		this.id_platosprincipal = id_platosprincipal;
+		this.id_platosecundario = id_platosecundario;
+		this.id_postre = id_postre;
+		this.id_bebidas = id_bebidas;
 		this.precio = precio;
 	}
 
-	public MenuEntity(EntranteEntity entrante, PrimerPlatoEntity primerplato, SegundoPlatoEntity segundoplato,
-			PostreEntity postre, BebidasEntity bebida, Integer precio) {
+
+
+	public MenuEntity(Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario, Integer id_postre,
+			Integer id_bebidas, Integer precio) {
 		super();
-		this.entrante = entrante;
-		this.primerplato = primerplato;
-		this.segundoplato = segundoplato;
-		this.postre = postre;
-		this.bebida = bebida;
+		this.id_entrantes = id_entrantes;
+		this.id_platosprincipal = id_platosprincipal;
+		this.id_platosecundario = id_platosecundario;
+		this.id_postre = id_postre;
+		this.id_bebidas = id_bebidas;
 		this.precio = precio;
 	}
+
+
 
 	public Integer getId() {
 		return id;
 	}
 
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public EntranteEntity getEntrante() {
-		return entrante;
+
+
+	public Integer getId_entrantes() {
+		return id_entrantes;
 	}
 
-	public void setEntrante(EntranteEntity entrante) {
-		this.entrante = entrante;
+
+
+	public void setId_entrantes(Integer id_entrantes) {
+		this.id_entrantes = id_entrantes;
 	}
 
-	public PrimerPlatoEntity getPrimerplato() {
-		return primerplato;
+
+
+	public Integer getId_platosprincipal() {
+		return id_platosprincipal;
 	}
 
-	public void setPrimerplato(PrimerPlatoEntity primerplato) {
-		this.primerplato = primerplato;
+
+
+	public void setId_platosprincipal(Integer id_platosprincipal) {
+		this.id_platosprincipal = id_platosprincipal;
 	}
 
-	public SegundoPlatoEntity getSegundoplato() {
-		return segundoplato;
+
+
+	public Integer getId_platosecundario() {
+		return id_platosecundario;
 	}
 
-	public void setSegundoplato(SegundoPlatoEntity segundoplato) {
-		this.segundoplato = segundoplato;
+
+
+	public void setId_platosecundario(Integer id_platosecundario) {
+		this.id_platosecundario = id_platosecundario;
 	}
 
-	public PostreEntity getPostre() {
-		return postre;
+
+
+	public Integer getId_postre() {
+		return id_postre;
 	}
 
-	public void setPostre(PostreEntity postre) {
-		this.postre = postre;
+
+
+	public void setId_postre(Integer id_postre) {
+		this.id_postre = id_postre;
 	}
 
-	public BebidasEntity getBebida() {
-		return bebida;
+
+
+	public Integer getId_bebidas() {
+		return id_bebidas;
 	}
 
-	public void setBebida(BebidasEntity bebida) {
-		this.bebida = bebida;
+
+
+	public void setId_bebidas(Integer id_bebidas) {
+		this.id_bebidas = id_bebidas;
 	}
+
+
 
 	public Integer getPrecio() {
 		return precio;
 	}
+
+
 
 	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
 
 
-	
+
 	
 	
 }

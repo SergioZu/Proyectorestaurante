@@ -3,8 +3,6 @@ create database restaurante;
 
 use  restaurante;
 
-select *from `menu`;
-
 CREATE TABLE `Entrantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
@@ -62,8 +60,7 @@ CREATE TABLE `SalasDisponibles` (
 
 INSERT INTO `SalasDisponibles` VALUES (1,'Mesa 1'),(2,'Mesa 2'),(3,'Mesa 3'),(4,'Mesa 4'),(5,'Mesa 5');
 
-DROP TABLE  `SalasDisponibles`;
-DROP TABLE  `SalasOcupadas`;
+
 CREATE TABLE `SalasOcupadas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,

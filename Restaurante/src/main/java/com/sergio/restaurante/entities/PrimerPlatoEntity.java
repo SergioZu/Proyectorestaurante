@@ -23,6 +23,13 @@ public class PrimerPlatoEntity {
 		super();
 	}
 
+	
+	public PrimerPlatoEntity(int id) {
+		super();
+		this.id = id;
+	}
+
+
 	public PrimerPlatoEntity(int id, String nombre, int precio) {
 		super();
 		this.id = id;

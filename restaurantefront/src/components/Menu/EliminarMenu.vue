@@ -3,12 +3,12 @@
   <div class="eliminarEntrantes">
       <h2>Eliminar</h2>
     <form>
-      <label >Entrante:</label><br>
-        <select name="select" v-model="idEntrante" >
+      <label >Menu:</label><br>
+        <select name="select" v-model="idMenu" >
         <option >...</option>
-        <option v-for="entrante in entrantes" :key="entrante" :value='entrante.id'>{{entrante.nombre}}</option>
+        <option v-for="menu in menuA" :key="menu" :value='menu.id'>{{menu.id}}</option>
       </select><br>
-      <button type="button"  @click="eliminarEntrantes()">enviar</button>
+      <button type="button"  @click="eliminarMenu()">enviar</button>
     </form>
   </div>
 </template>
@@ -19,28 +19,28 @@ import axios from "axios";
 export default {
   data() {
         return {
-            entrantes:[],
-            idEntrante:""
+            menuA:[],
+            idMenu:""
         }
     },
   
     methods:{
-    obtenerBebidas: function(){
-      axios
-        .get("http://localhost:8080/restaurante/v1/entrante")
-        .then(response => {
-          this.entrantes = response.data;
-        })
-        .catch(response=>alert("Error al recuperar datos "+response.status));
-      },
-      eliminarEntrantes: function(){
-        axios.delete("http://localhost:8080/restaurante/v1/entrante/"+this.idEntrante).then((result) => {
-            alert("Se ha eliminado la Bebida Correctamente");
+    obtenerMenus: function(){
+          axios
+            .get("http://localhost:8080/restaurante/v1/menu")
+            .then(response => {
+              this.menuA = response.data;
+            })
+            .catch(response=>alert("Error al recuperar datos "+response.status));
+          },
+      eliminarMenu: function(){
+        axios.delete("http://localhost:8080/restaurante/v1/menu/"+this.idMenu).then((result) => {
+            alert("Se ha eliminado el menu Correctamente");
             });
         }
     },
      created(){
-     this.obtenerBebidas();
+     this.obtenerMenus();
     }
   
 }

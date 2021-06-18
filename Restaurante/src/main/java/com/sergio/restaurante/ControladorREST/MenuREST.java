@@ -27,6 +27,8 @@ public class MenuREST {
 	@Autowired
 	private MenuRepository menuRepository;
 	
+	
+	
 	@GetMapping(value = "/menu")
 	public Iterable<MenuEntity> listarTodasMenu() {
 		return menuRepository.findAll();
@@ -39,7 +41,6 @@ public class MenuREST {
 	
 	@PostMapping("/menu")
 	public ResponseEntity <String> insertarMenu(@RequestBody MenuEntity menu){
-		System.out.println(menu.getPostre().getId());
 		menuRepository.save(menu);
 		return new ResponseEntity<>("Inserción correcta!",HttpStatus.OK);
 		

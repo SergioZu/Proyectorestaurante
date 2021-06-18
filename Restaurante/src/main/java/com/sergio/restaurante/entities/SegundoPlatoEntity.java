@@ -23,6 +23,15 @@ public class SegundoPlatoEntity {
 		super();
 	}
 	
+	
+	
+	public SegundoPlatoEntity(int id) {
+		super();
+		this.id = id;
+	}
+
+
+
 	public SegundoPlatoEntity(int id, String nombre, int precio) {
 		super();
 		this.id = id;
