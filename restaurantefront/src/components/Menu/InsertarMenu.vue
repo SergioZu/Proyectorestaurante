@@ -31,6 +31,12 @@
        <select name="select" v-model="bebida" >
         <option >...</option>
         <option v-for="bebida in bebidasA" :key="bebida" :value='bebida'>{{bebida.nombre}}</option>
+      </select><br>
+
+       <label >Sala:</label><br>
+       <select name="select" v-model="salas" >
+        <option >...</option>
+        <option v-for="salas in salasA" :key="salas" :value='salas'>{{salas.nombre}}</option>
       </select><br><br>
       <button type="button"  @click="nuevaEntrante()">enviar</button>
     </form>
@@ -42,17 +48,19 @@ import axios from "axios";
 
 export default {
   data() {
-        return {
+         return {
           bebidasA:[],
           entrantesA:[],
           postresA:[],
           primerplatosA:[],
           segundoplatosA:[],
+          salasA:[],
           entrante:null,
           platoprincipal:null,
           platosecundario:null,
           postre:null,
           bebida:null,
+          salas:null,
           precioTotal:0
         }
     },
@@ -65,6 +73,7 @@ export default {
           id_platosecundario:this.platosecundario.id,
           id_postre:this.postre.id,
           id_bebidas:this.bebida.id,
+          id_salas:this.salas.id,
           precio:this.entrante.precio+this.entrante.precio+this.platoprincipal.precio+this.postre.precio+this.bebida.precio,
           
         }
@@ -72,7 +81,14 @@ export default {
         axios.post("http://localhost:8080/restaurante/v1/menu", menu).then((result) => {
             alert("Se ha insertado la Bebida Correctamente");
             });
-        },
+        },obtenerMenus: function(){
+          axios
+            .get("http://localhost:8080/restaurante/v1/menu")
+            .then(response => {
+              this.menuA = response.data;
+            })
+            .catch(response=>alert("Error al recuperar datos "+response.status));
+          },
          obtenerBebidas: function(){
           axios
             .get("http://localhost:8080/restaurante/v1/bebidas")
@@ -112,19 +128,29 @@ export default {
             this.segundoplatosA = response.data;
             })
             .catch(response=>alert("Error al recuperar datos "+response.status));
-        }
+        },listarSalasDisponibles: function(){
+          axios
+            .get("http://localhost:8080/restaurante/v1/salas")
+            .then(response => {
+              this.salasA = response.data;
+            })
+            .catch(response=>alert("Error al recuperar datos "+response.status));
+          }
     },
    created(){
+     this.obtenerMenus();
      this.obtenerBebidas();
      this.obtenerEntrantes();
      this.obtenerPostre();
      this.obtenerPrimerPlato();
      this.obtenerSegundoPlato();
+     this.listarSalasDisponibles();
     }
    
   
 }
 </script>
+
 
 <style>
 .nuevoMenu{

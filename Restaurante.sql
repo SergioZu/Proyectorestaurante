@@ -61,7 +61,7 @@ CREATE TABLE `Salas` (
 
 INSERT INTO `Salas` VALUES (1,'Sala 1',true),(2,'Sala 2',true),(3,'Sala 3',true),(4,'Sala 4',true),(5,'Sala 5',true);
 
-drop table `menu`;
+
 
 CREATE TABLE `menu` (
   `id` int NOT NULL AUTO_INCREMENT,

@@ -38,6 +38,9 @@ public class MenuEntity {
 	@JoinColumn(name = "id_bebidas")
 	private Integer id_bebidas;
 	
+	@JoinColumn(name = "id_salas")
+	private Integer id_salas;
+	
 	@Column(name = "precio")
 	private Integer precio;
 	
@@ -56,7 +59,7 @@ public class MenuEntity {
 
 
 	public MenuEntity(Integer id, Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario,
-			Integer id_postre, Integer id_bebidas, Integer precio) {
+			Integer id_postre, Integer id_bebidas, Integer id_salas, Integer precio) {
 		super();
 		this.id = id;
 		this.id_entrantes = id_entrantes;
@@ -64,19 +67,21 @@ public class MenuEntity {
 		this.id_platosecundario = id_platosecundario;
 		this.id_postre = id_postre;
 		this.id_bebidas = id_bebidas;
+		this.id_salas = id_salas;
 		this.precio = precio;
 	}
 
 
 
 	public MenuEntity(Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario, Integer id_postre,
-			Integer id_bebidas, Integer precio) {
+			Integer id_bebidas, Integer id_salas, Integer precio) {
 		super();
 		this.id_entrantes = id_entrantes;
 		this.id_platosprincipal = id_platosprincipal;
 		this.id_platosecundario = id_platosecundario;
 		this.id_postre = id_postre;
 		this.id_bebidas = id_bebidas;
+		this.id_salas = id_salas;
 		this.precio = precio;
 	}
 
@@ -154,6 +159,18 @@ public class MenuEntity {
 
 
 
+	public Integer getId_salas() {
+		return id_salas;
+	}
+
+
+
+	public void setId_salas(Integer id_salas) {
+		this.id_salas = id_salas;
+	}
+
+
+
 	public Integer getPrecio() {
 		return precio;
 	}
@@ -163,7 +180,7 @@ public class MenuEntity {
 	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
-
+	
 
 
 	

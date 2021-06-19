@@ -9,6 +9,7 @@ public class MenuDTO {
 	private Integer id_platosecundario;
 	private Integer id_postre;
 	private Integer id_bebidas;
+	private Integer id_salas;
 	private Integer precio;
 	
 	
@@ -22,7 +23,7 @@ public class MenuDTO {
 	}
 
 	public MenuDTO(Integer id, Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario,
-			Integer id_postre, Integer id_bebidas, Integer precio) {
+			Integer id_postre, Integer id_bebidas, Integer id_salas, Integer precio) {
 		super();
 		this.id = id;
 		this.id_entrantes = id_entrantes;
@@ -30,17 +31,19 @@ public class MenuDTO {
 		this.id_platosecundario = id_platosecundario;
 		this.id_postre = id_postre;
 		this.id_bebidas = id_bebidas;
+		this.id_salas = id_salas;
 		this.precio = precio;
 	}
 
 	public MenuDTO(Integer id_entrantes, Integer id_platosprincipal, Integer id_platosecundario, Integer id_postre,
-			Integer id_bebidas, Integer precio) {
+			Integer id_bebidas, Integer id_salas, Integer precio) {
 		super();
 		this.id_entrantes = id_entrantes;
 		this.id_platosprincipal = id_platosprincipal;
 		this.id_platosecundario = id_platosecundario;
 		this.id_postre = id_postre;
 		this.id_bebidas = id_bebidas;
+		this.id_salas = id_salas;
 		this.precio = precio;
 	}
 
@@ -92,6 +95,14 @@ public class MenuDTO {
 		this.id_bebidas = id_bebidas;
 	}
 
+	public Integer getId_salas() {
+		return id_salas;
+	}
+
+	public void setId_salas(Integer id_salas) {
+		this.id_salas = id_salas;
+	}
+
 	public Integer getPrecio() {
 		return precio;
 	}
@@ -100,6 +111,7 @@ public class MenuDTO {
 		this.precio = precio;
 	}
 
+	
 
 
 
