@@ -51,22 +51,17 @@ CREATE TABLE `Bebidas` (
 
 INSERT INTO `Bebidas` VALUES (1,'Aguas caseras',4),(2,'Sangrías reinventadas',4),(3,'CocaCola',4),(4,'Vino Tinto',4),(5,'Cerbeza',4);
 
-CREATE TABLE `SalasDisponibles` (
+CREATE TABLE `Salas` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `nombre` varchar(50) NOT NULL,
+  `disponible` boolean not null,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO `SalasDisponibles` VALUES (1,'Mesa 1'),(2,'Mesa 2'),(3,'Mesa 3'),(4,'Mesa 4'),(5,'Mesa 5');
+INSERT INTO `Salas` VALUES (1,'Sala 1',true),(2,'Sala 2',true),(3,'Sala 3',true),(4,'Sala 4',true),(5,'Sala 5',true);
 
-
-CREATE TABLE `SalasOcupadas` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `nombreocupante` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+drop table `menu`;
 
 CREATE TABLE `menu` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -75,6 +70,7 @@ CREATE TABLE `menu` (
   `id_platosecundario` int DEFAULT NULL,
   `id_postre` int DEFAULT NULL,
   `id_bebidas` int DEFAULT NULL,
+  `id_salas` int DEFAULT NULL,
   `precio` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_idx` (`id_entrantes`),
@@ -82,11 +78,13 @@ CREATE TABLE `menu` (
   KEY `id_idx2` (`id_platosecundario`),
   KEY `id_idx3` (`id_postre`),
   KEY `id_idx4` (`id_bebidas`),
+  KEY `id_idx5` (`id_salas`),
   CONSTRAINT `id` FOREIGN KEY (`id_entrantes`) REFERENCES `Entrantes` (`id`),
   CONSTRAINT `id_platosprincipal` FOREIGN KEY (`id_platosprincipal`) REFERENCES `PlatoPrincipal` (`id`),
   CONSTRAINT `id_platosecundario` FOREIGN KEY (`id_platosecundario`) REFERENCES `PlatoSecundario` (`id`),
   CONSTRAINT `id_postre` FOREIGN KEY (`id_postre`) REFERENCES `Bebidas` (`id`),
-  CONSTRAINT `id_bebidas` FOREIGN KEY (`id_bebidas`) REFERENCES `Postre` (`id`)
+  CONSTRAINT `id_bebidas` FOREIGN KEY (`id_bebidas`) REFERENCES `Postre` (`id`),
+CONSTRAINT `id_salas` FOREIGN KEY (`id_salas`) REFERENCES `Salas` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
