@@ -1,13 +1,19 @@
 <template>
 
   <div class="eliminarSalas">
-      <h2>Eliminar Salas Ocupadas</h2>
+      <h2>Insertar</h2>
     <form>
-        <label >Sala Disponible:</label><br>
-       <select name="select" v-model="idDisponible">
-        <option v-for="salasocupada in salasocupadas" :key="salasocupada" :value='salasocupada.id'> {{salasocupada.nombre}}</option>
-      </select><br>
-      <button type="button"  @click="eliminarSala()">enviar</button>
+        <label >Sala Ocupadas:</label><br>
+       <select name="select" v-model="idDisponible"><br>
+       
+       <option v-for="salasdisponible in salasdisponibles" :key="salasdisponible"  :value='salasdisponible.id'>
+          <span v-if="salasdisponible.disponible==false" >{{salasdisponible.nombre}}</span>
+         </option> 
+      
+      
+      </select>
+      <br>
+      <button type="button"  @click="crearSala()">enviar</button>
     </form>
   </div>
 </template>
@@ -18,39 +24,37 @@ import axios from "axios";
 export default {
   data() {
         return {
-            salasocupadas:[],
-            idDisponible:0,
-            nombreCliente:""
+            salasdisponibles:[],
+            idDisponible:0
         }
     },
   
     methods:{
         obtenerSalas: function(){
       axios
-        .get("http://localhost:8080/restaurante/v1/salasocupadas")
+        .get("http://localhost:8080/restaurante/v1/salas")
         .then(response => {
-          this.salasocupadas = response.data;
+          this.salasdisponibles = response.data;
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       },
-      eliminarSala: function(){
-          for (var i = 0; i <= this.salasocupadas.length; i++) {
-          
-          if(this.salasocupadas[i].id==this.idDisponible){
-             let salasDisponibles={
-                id:this.salasocupadas[i].id,
-                nombre:this.salasocupadas[i].nombre,
-                nombreOcupante:this.nombreCliente
+      crearSala: function(){
+
+        for (var i = 0; i < this.salasdisponibles.length; i++) {
+          console.log(this.salasdisponibles[i]);
+          if(this.salasdisponibles[i].id==this.idDisponible){
+            
+             let salasOcupadas={
+                id:this.salasdisponibles[i].id,
+                nombre:this.salasdisponibles[i].nombre,
+                disponible:true
               }
-            axios.delete("http://localhost:8080/restaurante/v1/salasocupadas/"+this.idDisponible).then((result) => {
-            alert("Se ha eliminado la Bebida Correctamente");
-            });
-            axios.post("http://localhost:8080/restaurante/v1/salasdisponible", salasDisponibles).then((result) => {
-              alert("Se ha insertado la Sala Ocupada Correctamente");
+              axios.put("http://localhost:8080/restaurante/v1/salas/"+this.idDisponible, salasOcupadas).then((result) => {
+              alert("Se ha modificado la Sala Correctamente");
               });
             }
         }
-      }
+        }
         
       },
     created(){

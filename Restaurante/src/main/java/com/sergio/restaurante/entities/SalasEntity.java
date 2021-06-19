@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "salasdisponibles")
-public class SalasDisponiblesEntity {
+@Table(name = "salas")
+public class SalasEntity {
 	
 	@Id
 	@Column(name = "id")
@@ -15,20 +15,34 @@ public class SalasDisponiblesEntity {
 	
 	@Column(name = "nombre")
 	private String nombre;
+	
+	@Column(name = "disponible")
+	private Boolean disponible;
 
-	public SalasDisponiblesEntity() {
+	public SalasEntity() {
 		super();
 	}
+	
+	
 
-	public SalasDisponiblesEntity(int id, String nombre) {
+	public SalasEntity(int id) {
+		super();
+		this.id = id;
+	}
+
+
+
+	public SalasEntity(int id, String nombre, Boolean disponible) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.disponible = disponible;
 	}
 
-	public SalasDisponiblesEntity(String nombre) {
+	public SalasEntity(String nombre, Boolean disponible) {
 		super();
 		this.nombre = nombre;
+		this.disponible = disponible;
 	}
 
 	public int getId() {
@@ -46,6 +60,15 @@ public class SalasDisponiblesEntity {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public Boolean getDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(Boolean disponible) {
+		this.disponible = disponible;
+	}
+
 	
 	
 

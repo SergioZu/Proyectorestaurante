@@ -1,21 +1,54 @@
 package com.sergio.restaurante.DTO;
 
-public class SalasDisponibleDTO {
+public class SalasDTO {
 	
 	private int id;
 	private String nombre;
+	private Boolean disponible;
 	
 	
 	
-	public SalasDisponibleDTO() {
+	public SalasDTO() {
 		super();
 	}
 
-	public SalasDisponibleDTO(int id, String nombre) {
+	
+
+	public SalasDTO(int id) {
+		super();
+		this.id = id;
+	}
+
+
+
+	public SalasDTO(String nombre, Boolean disponible) {
+		super();
+		this.nombre = nombre;
+		this.disponible = disponible;
+	}
+
+
+
+	public SalasDTO(int id, String nombre, Boolean disponible) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.disponible = disponible;
 	}
+
+
+
+	public Boolean getDisponible() {
+		return disponible;
+	}
+
+
+
+	public void setDisponible(Boolean disponible) {
+		this.disponible = disponible;
+	}
+
+
 
 	public int getId() {
 		return id;

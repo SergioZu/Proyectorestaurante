@@ -16,38 +16,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sergio.restaurante.entities.SalasDisponiblesEntity;
-import com.sergio.restaurante.repository.SalasDisponibleRepository;
+import com.sergio.restaurante.entities.MenuEntity;
+import com.sergio.restaurante.entities.SalasEntity;
+import com.sergio.restaurante.repository.SalasRepository;
 
 @RestController
 @RequestMapping("/v1")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
-public class SalasDisponibleREST {
+public class SalasREST {
 	
 	@Autowired
-	private SalasDisponibleRepository salasdisponibleRepository;
+	private SalasRepository salasRepository;
 	
-	@GetMapping(value = "/salasdisponible")
-	public Iterable<SalasDisponiblesEntity> listarTodosSalasDisponible() {
-		return salasdisponibleRepository.findAll();
+	@GetMapping(value = "/salas")
+	public Iterable<SalasEntity> listarTodosSalasDisponible() {
+		return salasRepository.findAll();
 	}
 	
-	@GetMapping(value = "/salasdisponible/{id}")
-	public Optional<SalasDisponiblesEntity> listarSalasDisponiblePorId(@PathVariable("id") Integer id) {
-		return salasdisponibleRepository.findById(id);
+	@GetMapping(value = "/salas/{id}")
+	public Optional<SalasEntity> listarSalasDisponiblePorId(@PathVariable("id") Integer id) {
+		return salasRepository.findById(id);
 	}
 	
-	@PostMapping("/salasdisponible")
-	public ResponseEntity <String> insertarSalasDisponible(@RequestBody SalasDisponiblesEntity salasdisponible){
-		salasdisponibleRepository.save(salasdisponible);
-		return new ResponseEntity<>("Inserción correcta!",HttpStatus.OK);
+	@PutMapping("/salas/{id}")
+	public ResponseEntity <String> modificarMenu(@RequestBody SalasEntity salas){
+		salasRepository.save(salas);
+		return new ResponseEntity<>("Modificación correcta!",HttpStatus.OK);
 		
-	}
-	
-	@DeleteMapping("/salasdisponible/{id}")
-	public ResponseEntity <String> eliminarSalasDisponible(@PathVariable("id") Integer id){
-		salasdisponibleRepository.deleteById(id);
-		return new ResponseEntity<>("Eliminación correcta!",HttpStatus.OK);
 	}
 		
 

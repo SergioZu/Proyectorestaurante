@@ -1,17 +1,16 @@
 <template>
-
 <div class="listarSalasOcupadas">
 <h2>Salas Ocupadas</h2>
 <table style="width:100%">
       <tr>
         <th>id</th>
         <th>Nombre</th>
-        <th>Nombre del ocupante</th>
+        <th>Ocupadas</th>
       </tr>
-       <tr v-for="sala in salas" :key="sala">
-          <td>{{ sala.id }}</td>
-          <td>{{ sala.nombre }}</td>
-          <td>{{ sala.nombreOcupante }}</td>
+       <tr v-for="sala in salas" :key="sala" >
+          <td v-if="sala.disponible==false">{{ sala.id }}</td>
+          <td v-if="sala.disponible==false">{{ sala.nombre }}</td>
+          <td v-if="sala.disponible==false">Si</td>
         </tr>
     </table>
 </div>
@@ -29,9 +28,9 @@ export default {
         }
     },
   methods:{
-    obtenerBebidas: function(){
+    listarSalasDisponibles: function(){
       axios
-        .get("http://localhost:8080/restaurante/v1/salasocupadas")
+        .get("http://localhost:8080/restaurante/v1/salas")
         .then(response => {
           this.salas = response.data;
         })
@@ -39,7 +38,7 @@ export default {
       }
   },
    created(){
-     this.obtenerBebidas();
+     this.listarSalasDisponibles();
     }
     
 }

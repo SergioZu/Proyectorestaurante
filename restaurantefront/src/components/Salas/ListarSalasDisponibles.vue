@@ -5,10 +5,12 @@
       <tr>
         <th>id</th>
         <th>Nombre</th>
+        <th>Disponible</th>
       </tr>
-       <tr v-for="sala in salas" :key="sala">
-          <td>{{ sala.id }}</td>
-          <td>{{ sala.nombre }}</td>
+       <tr v-for="sala in salas" :key="sala" >
+          <td v-if="sala.disponible==true">{{ sala.id }}</td>
+          <td v-if="sala.disponible==true">{{ sala.nombre }}</td>
+          <td v-if="sala.disponible==true">Si</td>
         </tr>
     </table>
 </div>
@@ -28,7 +30,7 @@ export default {
   methods:{
     listarSalasDisponibles: function(){
       axios
-        .get("http://localhost:8080/restaurante/v1/salasdisponible")
+        .get("http://localhost:8080/restaurante/v1/salas")
         .then(response => {
           this.salas = response.data;
         })

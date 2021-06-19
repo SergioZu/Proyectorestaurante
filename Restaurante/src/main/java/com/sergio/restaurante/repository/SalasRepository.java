@@ -7,22 +7,24 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.sergio.restaurante.DTO.SalasDisponibleDTO;
-import com.sergio.restaurante.entities.SalasDisponiblesEntity;
+import com.sergio.restaurante.DTO.SalasDTO;
+import com.sergio.restaurante.entities.SalasEntity;
 
 
 
 
 @Repository
-public interface SalasDisponibleRepository extends CrudRepository<SalasDisponiblesEntity, Integer>{
+public interface SalasRepository extends CrudRepository<SalasEntity, Integer>{
 	
 
-	@Query(value = "select new com.sergio.restaurante.DTO.SalasDisponibleDTO (sa.id,sa.nombre) "
-			+ "FROM com.sergio.restaurante.entities.SalasDisponiblesEntity sa "
+	@Query(value = "select new com.sergio.restaurante.DTO.SalasDTO (sa.id,sa.nombre,sa.disponible) "
+			+ "FROM com.sergio.restaurante.entities.SalasEntity sa "
 			+ "WHERE (sa.id LIKE CONCAT('%',:id,'%') or :id is null) "
-			+ "AND sa.nombre LIKE CONCAT ('%',:nombre,'%') ")
-	 		List<SalasDisponibleDTO> obtenerSalasDisponiblePorIDNombre(
+			+ "AND sa.nombre LIKE CONCAT ('%',:nombre,'%') "
+			+ "AND sa.disponible LIKE CONCAT ('%',:disponible,'%') ")
+	 		List<SalasDTO> obtenerSalasPorIDNombre(
 					  @Param("id") int id,
-					  @Param("nombre") String nombre);
+					  @Param("nombre") String nombre,
+	 				  @Param("disponible") Boolean disponible);
 
 }
