@@ -9,15 +9,16 @@
 		<version>2.4.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.carol</groupId>
-	<artifactId>colegio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>colegio</name>
+	
+	<groupId>com.sergio</groupId>
+	<artifactId>restaurante</artifactId>
+	<name>restaurante</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<packaging>war</packaging>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.spring4all</groupId>
