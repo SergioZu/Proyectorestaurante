@@ -62,7 +62,7 @@
             <div class="overlay">
                 <h2>Menu</h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+                <p>Menu de degustación de CometeloToó.</p>
             </div>
         </div>
         <div class="container">
