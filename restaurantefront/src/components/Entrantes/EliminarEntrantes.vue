@@ -35,7 +35,7 @@ export default {
       },
       eliminarEntrantes: function(){
         axios.delete("http://localhost:8080/restaurante/v1/entrante/"+this.idEntrante).then((result) => {
-            alert("Se ha eliminado la Bebida Correctamente");
+            alert("Se ha eliminado el Entrante Correctamente");
             });
         }
     },

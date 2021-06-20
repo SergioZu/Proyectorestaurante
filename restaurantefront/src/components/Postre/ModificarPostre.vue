@@ -46,7 +46,7 @@ export default {
           precio:this.precioPostre,
         }
         axios.put("http://localhost:8080/restaurante/v1/postre/"+this.idPostre, postres).then((result) => {
-            alert("Se ha modificado la Bebida Correctamente");
+            alert("Se ha modificado el Postre Correctamente");
             });
         }
     },

@@ -43,7 +43,6 @@ export default {
         .get("http://localhost:8080/restaurante/v1/menu")
         .then(response => {
           this.menus = response.data;
-          console.log(this.menus);
         })
         .catch(response=>alert("Error al recuperar datos "+response.status));
       }

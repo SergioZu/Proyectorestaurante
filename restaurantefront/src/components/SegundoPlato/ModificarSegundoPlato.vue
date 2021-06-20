@@ -47,7 +47,7 @@ export default {
         }
         console.log(segundoplatos);
         axios.put("http://localhost:8080/restaurante/v1/segundoplato/"+this.idSegundoPlato, segundoplatos).then((result) => {
-            alert("Se ha modificado la Bebida Correctamente");
+            alert("Se ha modificado el Segundo Plato Correctamente");
             });
         }
     },

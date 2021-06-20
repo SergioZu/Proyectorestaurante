@@ -77,9 +77,8 @@ export default {
           precio:this.entrante.precio+this.entrante.precio+this.platoprincipal.precio+this.postre.precio+this.bebida.precio,
           
         }
-        console.log(menu);
         axios.post("http://localhost:8080/restaurante/v1/menu", menu).then((result) => {
-            alert("Se ha insertado la Bebida Correctamente");
+            alert("Se ha insertado el menu  Correctamente");
             });
         },obtenerMenus: function(){
           axios

@@ -35,7 +35,7 @@ export default {
       },
       eliminarSegundoPlato: function(){
         axios.delete("http://localhost:8080/restaurante/v1/segundoplato/"+this.idSegundoPlato).then((result) => {
-            alert("Se ha eliminado la Bebida Correctamente");
+            alert("Se ha eliminado el Segundo Plato Correctamente");
             });
         }
     },

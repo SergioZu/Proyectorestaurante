@@ -30,7 +30,7 @@ export default {
           precio:this.precioPrimerPlato,
         }
         axios.post("http://localhost:8080/restaurante/v1/primerplato", primerplatos).then((result) => {
-            alert("Se ha insertado la Bebida Correctamente");
+            alert("Se ha insertado el Primer Plato Correctamente");
             });
         }
     }

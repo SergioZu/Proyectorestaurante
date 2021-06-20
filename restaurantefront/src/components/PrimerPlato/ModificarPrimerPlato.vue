@@ -46,7 +46,7 @@ export default {
           precio:this.precioPrimerPlato,
         }
         axios.put("http://localhost:8080/restaurante/v1/primerplato/"+this.idPrimerPlato, primerplatos).then((result) => {
-            alert("Se ha modificado la Bebida Correctamente");
+            alert("Se ha modificado el Primer Plato Correctamente");
             });
         }
     },

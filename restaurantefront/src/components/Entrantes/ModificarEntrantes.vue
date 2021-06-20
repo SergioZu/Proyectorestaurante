@@ -46,7 +46,7 @@ export default {
           precio:this.precioEntrante,
         }
         axios.put("http://localhost:8080/restaurante/v1/entrante/"+this.idEntrante, entrantes).then((result) => {
-            alert("Se ha modificado la Bebida Correctamente");
+            alert("Se ha modificado el Entrante Correctamente");
             });
         }
     },

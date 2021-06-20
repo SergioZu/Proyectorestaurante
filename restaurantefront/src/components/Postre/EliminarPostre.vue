@@ -35,7 +35,7 @@ export default {
       },
       eliminarPostre: function(){
         axios.delete("http://localhost:8080/restaurante/v1/postre/"+this.idPostres).then((result) => {
-            alert("Se ha eliminado la Bebida Correctamente");
+            alert("Se ha eliminado el Postre Correctamente");
             });
         }
     },
