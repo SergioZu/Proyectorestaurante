@@ -1,6 +1,5 @@
 #Dockerfile para crear una imagen basada en mysql
 FROM mysql:latest
-
 #Se copian los scripts desde la carpeta en la que estén al directorio dentro del contenedor
 #En este ejemplo no se va a mapear mediante volúmenes ni a bindear la bbdd.
 COPY ./scriptSQL/ /docker-entrypoint-initdb.d/
