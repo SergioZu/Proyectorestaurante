@@ -9,6 +9,7 @@
         <th>Segundo Plato</th>
         <th>Postre</th>
         <th>Bebida</th>
+        <th>Salas</th>
         <th>Precio</th>
       </tr>
        <tr v-for="menu in menus" :key="menu">
@@ -18,6 +19,7 @@
            <td>{{ menu.id_platosecundario }}</td>
            <td>{{ menu.id_postre }}</td>
            <td>{{ menu.id_bebidas }}</td>
+           <td>{{ menu.id_salas }}</td>
            <td>{{ menu.precio }}€</td>
         </tr>
     </table>

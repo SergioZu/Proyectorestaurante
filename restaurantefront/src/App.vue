@@ -48,9 +48,9 @@
                     <div class="about-text">
                         <h2>Nuestro Restaurante</h2>
                         <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-                        <h3>Awarded Chefs</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+                        <p>Como dice nuestro nombre cometelo todo y no dejes nada, ya que la vida son dos dias y mejor con el estomago lleno</p>
+                        <h3>Chefs Galardonados</h3>
+                        <p>En nuestro restaurante no solo han pasado a degustar nuestros platos sino algunos han  enseñado sus platos estrellas,como Martín Berasategui, Carme Ruscalleda, Quique Dacosta y muchos mas.No solamente se les considera los mejores chefs de España, sino que se sus nombres se encuentran enmarcados entre los mejores del mundo. </p>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         <hr>
                         <div class="menu-item" v-for="entrante in entrantes" :key="entrante">
                             <div class="menu-item-name"> {{ entrante.nombre }}</div>
-                            <div class="menu-item-price">{{ entrante.precio }} </div>
+                            <div class="menu-item-price">{{ entrante.precio }} €</div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         <hr>
                         <div class="menu-item" v-for="primerplato in primerplatos" :key="primerplato">
                             <div class="menu-item-name"> {{ primerplato.nombre }} </div>
-                            <div class="menu-item-price">{{ primerplato.precio }} </div>
+                            <div class="menu-item-price">{{ primerplato.precio }} €</div>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                         <hr>
                         <div class="menu-item" v-for="segundoplato in segundoplatos" :key="segundoplato">
                             <div class="menu-item-name"> {{ segundoplato.nombre }} </div>
-                            <div class="menu-item-price">{{ segundoplato.precio }} </div>
+                            <div class="menu-item-price">{{ segundoplato.precio }} €</div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                         <hr>
                         <div class="menu-item"  v-for="postre in postres" :key="postre">
                             <div class="menu-item-name"> {{ postre.nombre }} </div>
-                            <div class="menu-item-price">{{ postre.precio }}</div>
+                            <div class="menu-item-price">{{ postre.precio }} €</div>
                         </div>
                         
                     </div>
@@ -116,7 +116,7 @@
                         <hr>
                         <div class="menu-item"  v-for="bebida in bebidas" :key="bebida">
                             <div class="menu-item-name"> {{ bebida.nombre }} </div>
-                            <div class="menu-item-price">{{ bebida.precio }}</div>
+                            <div class="menu-item-price">{{ bebida.precio }} €</div>
                         </div>
                         
                     </div>
@@ -128,9 +128,9 @@
     <div id="portfolio">
         <div class="section-title text-center center">
             <div class="overlay">
-                <h2>Gallery</h2>
+                <h2>Galeria</h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+                <p>Echa un vistazo a nuestros increibles platos.</p>
             </div>
         </div>
         <div class="container">
@@ -333,22 +333,22 @@
             <div class="col-md-4">
                 <h3>Localización</h3>
                 <div class="contact-item">
-                    <p>4321 California St,</p>
-                    <p>San Francisco, CA 12345</p>
+                    <p>12345 España ,</p>
+                    <p>Salamanca, CA 12345</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <h3>Horario</h3>
                 <div class="contact-item">
-                    <p>Mon-Thurs: 10:00 AM - 11:00 PM</p>
-                    <p>Fri-Sun: 11:00 AM - 02:00 AM</p>
+                    <p>Lunes-Viernes: 10:00 - 21:00 </p>
+                    <p>Viernes-Sabado: 12:00  - 20:00 AM</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <h3>Datos de Contactos</h3>
                 <div class="contact-item">
-                    <p>Phone: +1 123 456 1234</p>
-                    <p>Email: info@company.com</p>
+                    <p>Telefono: +1 123 456 1234</p>
+                    <p>Correo: CometeloTo@gmail.com</p>
                 </div>
             </div>
         </div>
